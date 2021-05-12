@@ -1,8 +1,8 @@
 <template>
     <div class="founder p-8">
-        <div class="wrapper flex flex-wrap">
-            <img src="" alt="" class="mx-12 my-4 bg-seafoam w-full">
-            <div class="text-wrapper">
+        <div class="wrapper flex justify-center justify-center flex-wrap">
+            <img src="" alt="" class="mx-12 my-4 max-w-sm bg-seafoam max-w-sm w-full">
+            <div class="text-wrapper max-w-lg">
                 <h5>Our Founder</h5>
                 <h5 class="font-bold">Wendell Toliver</h5>
                 <p>Our Founder: Wendell Toliver- Majority Owner of Accompany is currently the managing 

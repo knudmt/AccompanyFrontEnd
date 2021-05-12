@@ -1,7 +1,7 @@
 <template>
     <div class="data-benifits p-8">
-        <div class="wrapper flex flex-wrap">
-            <img src="" alt="" class="mx-12 my-4 bg-seafoam w-full">
+        <div class="wrapper flex justify-center flex-wrap">
+            <img src="" alt="" class="mx-12 my-4 bg-seafoam max-w-sm w-full">
             <div class="text-wrapper">
                 <h5 class="mb-4 font-bold">Data Services and CO2 Benefits</h5>
                 <span class="check-mark"></span>

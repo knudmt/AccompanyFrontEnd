@@ -1,8 +1,8 @@
 <template>
     <div class="about-us p-8 ">
         <h3 class="font-bold">About Us</h3>
-        <div class="wrapper flex flex-wrap">
-            <img src="" alt="" class="mx-12 my-4 bg-seafoam w-full">
+        <div class="wrapper flex justify-center flex-wrap">
+            <img src="" alt="" class="mx-12 my-4 bg-seafoam max-w-sm w-full">
             <div class="text-wrapper">
                 <h5>OUR SERVICE</h5>
                 <h5 class="font-bold mb-2">Food Delivery and Data Services</h5>
