@@ -1,8 +1,11 @@
 <template>
   <div class="container max-w-full">
-    <HeroTabs />
     <Hero />
-    <DataServices />
+    <About />
+    <Mission />
+    <Founder />
+    <HowItWorks />
+    <DataAndBenifits />
     <Partners />
     <Contact />
     <Footer />
@@ -11,18 +14,24 @@
 
 <script>
 import Hero from '../components/Hero';
-import HeroTabs from '../components/HeroTabs';
-import DataServices from '../components/DataServices';
+import About from '../components/whyus/About';
+import Mission from '../components/whyus/Mission';
+import Founder from '../components/whyus/Founder';
+import HowItWorks from '../components/whyus/HowItWorks';
+import DataAndBenifits from '../components/whyus/DataAndBenifits';
 import Partners from '../components/Partners';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 export default {
-  name: 'Home',
+  name: 'WhyUs',
   components: { 
-    HeroTabs,
     Hero,
-    DataServices,
+    About,
+    Mission,
+    Founder,
+    HowItWorks,
+    DataAndBenifits,
     Partners,
     Contact,
     Footer,

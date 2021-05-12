@@ -81,11 +81,19 @@ select {
 	background-color:black;
 }
 
+img:after {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+
 .img-replace:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
+
+
 .active {
   background-color: transparent;
   border-radius: none;

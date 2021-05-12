@@ -15,6 +15,7 @@ module.exports = {
         sectionGrey: '#d5d5d5',
         footerGrey:'#efefef',
         darkGrey: '#bababa',
+        seafoam: '#1F9889',
       },
     },
   },
