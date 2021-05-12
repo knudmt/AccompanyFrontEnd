@@ -1,5 +1,5 @@
 <template>
-    <button class="px-8 py-3 font-bold text-xl min-w-min lg:text-2xl border-4 border-solid border-black">{{ msg }}</button>
+    <button class="px-4 py-2 font-bold text-13px min-w-min lg:text-2xl rounded  border-2 border-solid">{{ msg }}</button>
 </template>
 
 <script>

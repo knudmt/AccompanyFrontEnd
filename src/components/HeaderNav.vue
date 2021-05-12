@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="wrapper h-20 w-full flex items-center justify-end">
+        <div class="wrapper h-50px w-full flex items-center justify-end">
             <div :class="isOpen ? 'block' : 'hidden'" class="wrapper absolute top-24 right-20 md:static md:flex">
                 <nav id="nav" class="float-right bg-gray-300 md:bg-transparent">
                     <div class="md:flex">
@@ -12,10 +12,10 @@
                 </nav>
             <div class="smartSearch"></div>
             </div>
-            <button class="w-12 h-12 flex md:hidden flex-wrap items-center float-right mr-4 my-2" @click="toggle">
-                <span class="top block h-2 w-full bg-gray-400"></span>
-                <span class="mid block h-2 w-full bg-gray-400"></span>
-                <span class="btm block h-2 w-full bg-gray-400"></span>
+            <button class=" w-6 h-6 flex md:hidden flex-wrap items-center float-right mr-8 my-2" @click="toggle">
+                <span class="top block h-3px w-full rounded-xl bg-burgColor"></span>
+                <span class="mid block h-3px w-full rounded-xl bg-burgColor"></span>
+                <span class="btm block h-3px w-full rounded-xl bg-burgColor"></span>
             </button>
         </div>
     </header>
