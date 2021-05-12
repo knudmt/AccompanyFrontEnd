@@ -1,6 +1,5 @@
 <template>
   <div class="container max-w-full">
-    <HeaderNav />
     <HeroTabs />
     <Hero />
     <DataServices />
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-import HeaderNav from '../components/HeaderNav';
 import Hero from '../components/Hero';
 import HeroTabs from '../components/HeroTabs';
 import DataServices from '../components/DataServices';
@@ -21,8 +19,7 @@ import Footer from '../components/Footer';
 
 export default {
   name: 'App',
-  components: {
-    HeaderNav,  
+  components: { 
     HeroTabs,
     Hero,
     DataServices,
