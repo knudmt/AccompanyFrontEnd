@@ -15,7 +15,7 @@
                 <textarea class="textarea text-sm max-w-full min-w-full appearance-none border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" placeholder="Insert Your Message Here"></textarea>
                 </div>
             </form>
-            <Button msg="Send Email" class="bg-seafoam text-white px-6 mb-6" />
+            <Button msg="Send Email" class="bg-seafoam border-none text-white px-6 mb-6" />
         </div>
         <div class="mb-6">
             <span class="text-darkBlueText font-bold text-base">Connect with Us</span>

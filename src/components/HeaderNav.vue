@@ -6,7 +6,7 @@
                     <div class="md:flex">
                         <router-link to="/" class="lg:mx-8 md:mx-4 mx-2 font-bold whitespace-nowrap text-xl lg:text-2xl" >Home</router-link>
                         <router-link to="/WhyUs" class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Why Accompany?</router-link>
-                        <span class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Careers</span>
+                        <router-link to="/Careers" class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Careers</router-link>
                         <router-link to="/ContactUs" class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Contact Us</router-link>
                     </div>
                 </nav>
