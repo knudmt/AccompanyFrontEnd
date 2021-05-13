@@ -23,7 +23,9 @@ module.exports = {
         footerGrey:'#efefef',
         darkGrey: '#bababa',
         seafoam: '#1F9889',
-        burgColor: '#122B72',
+        darkBlueText: '#122B72',
+        grayText: '$4e4e4e',
+        lineBlue: '#11369D'
       },
     },
   },

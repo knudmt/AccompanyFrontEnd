@@ -7,15 +7,15 @@
                         <router-link to="/" class="lg:mx-8 md:mx-4 mx-2 font-bold whitespace-nowrap text-xl lg:text-2xl" >Home</router-link>
                         <router-link to="/WhyUs" class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Why Accompany?</router-link>
                         <span class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Careers</span>
-                        <span class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Contact Us</span>
+                        <router-link to="/ContactUs" class="lg:mx-8 md:mx-4 mx-2 whitespace-nowrap text-xl lg:text-2xl">Contact Us</router-link>
                     </div>
                 </nav>
             <div class="smartSearch"></div>
             </div>
             <button class=" w-6 h-6 flex md:hidden flex-wrap items-center float-right mr-8 my-2" @click="toggle">
-                <span class="top block h-3px w-full rounded-xl bg-burgColor"></span>
-                <span class="mid block h-3px w-full rounded-xl bg-burgColor"></span>
-                <span class="btm block h-3px w-full rounded-xl bg-burgColor"></span>
+                <span class="top block h-3px w-full rounded-xl bg-darkBlueText"></span>
+                <span class="mid block h-3px w-full rounded-xl bg-darkBlueText"></span>
+                <span class="btm block h-3px w-full rounded-xl bg-darkBlueText"></span>
             </button>
         </div>
     </header>
