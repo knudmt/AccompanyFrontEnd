@@ -5,7 +5,6 @@
     <DataServices />
     <Partners />
     <Contact />
-    <Footer />
   </div>
 </template>
 
@@ -15,7 +14,6 @@ import HeroTabs from '../components/HeroTabs';
 import DataServices from '../components/DataServices';
 import Partners from '../components/Partners';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 
 export default {
   name: 'Home',
@@ -25,7 +23,6 @@ export default {
     DataServices,
     Partners,
     Contact,
-    Footer,
   }
 }
 </script>

@@ -4,7 +4,6 @@
     <CareerInfo />
     <FAQ />
     <Contact />
-    <Footer />
   </div>
 </template>
 
@@ -12,7 +11,6 @@
 import Hero from '../components/Hero';
 import CareerInfo from '../components/careers/CareerInfo';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 
 export default {
   name: 'Careers',
@@ -25,7 +23,6 @@ export default {
     Hero,
     CareerInfo,
     Contact,
-    Footer,
   }
 }
 </script>

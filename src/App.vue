@@ -1,17 +1,22 @@
 <template>
   <div id="app">
     <HeaderNav />
-    <router-view />
+    <div id="contentDiv" class="max-w-screen-3xl m-auto">
+        <router-view />
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import HeaderNav from './components/HeaderNav'
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
   components: {
     HeaderNav,
+    Footer,
   }
 }
 </script>
@@ -25,17 +30,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+ 
 </style>

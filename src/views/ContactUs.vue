@@ -4,7 +4,6 @@
     <FormSection />
     <FAQ />
     <Partners />
-    <Footer />
   </div>
 </template>
 
@@ -13,7 +12,6 @@ import Hero from '../components/Hero';
 import FormSection from '../components/contactus/FormSection';
 import FAQ from '../components/contactus/FAQ.vue';
 import Partners from '../components/Partners';
-import Footer from '../components/Footer';
 
 export default {
   name: 'ContactUs',
@@ -27,7 +25,6 @@ export default {
     FormSection,
     FAQ,
     Partners,
-    Footer,
   }
 }
 </script>

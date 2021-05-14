@@ -77,11 +77,11 @@ select {
   }
 }
 
-.partner-img, .img-replace {
+.img-replace {
 	background-color:black;
 }
 
-img:after {
+.img-replace:after {
   content: "";
   display: block;
   padding-bottom: 50%;
@@ -110,3 +110,66 @@ img:after {
   line-height: 20px;
 }
 
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 11px solid #fff;
+  position: absolute;
+  top: -10px;
+  right: 16px;
+}
+
+.about-img {
+  max-width: 490px;
+  max-height: 230px;
+}
+
+
+
+.check-mark {
+  background: url('../images/check@2x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  margin-right: 10px;
+}
+
+.triangle-outline {
+	width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 11px solid #999;
+  opacity: 0.7;
+  position: absolute;
+  top: -11px;
+  right: 16px;
+}
+.overlay::-webkit-scrollbar-track{
+  background-color: #ccc;
+  background-clip: content-box; 
+  border-radius: 10px;
+}
+
+.overlay::-webkit-scrollbar{
+  width: 2px;
+  height: 5px;
+  background-color: #ccc;
+  background-clip: content-box; 
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+
+  background-clip: content-box;
+}
+.overlay::-webkit-scrollbar-thumb{
+    background-color: #818B99;
+    border: 1px solid black;
+    border-radius: 9px;
+    width: 10px;
+}

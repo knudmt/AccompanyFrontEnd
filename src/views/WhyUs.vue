@@ -8,7 +8,6 @@
     <DataAndBenifits />
     <Partners />
     <Contact />
-    <Footer />
   </div>
 </template>
 
@@ -21,10 +20,14 @@ import HowItWorks from '../components/whyus/HowItWorks';
 import DataAndBenifits from '../components/whyus/DataAndBenifits';
 import Partners from '../components/Partners';
 import Contact from '../components/Contact';
-import Footer from '../components/Footer';
 
 export default {
   name: 'WhyUs',
+  data() {
+    return {
+
+    }
+  },
   components: { 
     Hero,
     About,
@@ -34,7 +37,6 @@ export default {
     DataAndBenifits,
     Partners,
     Contact,
-    Footer,
   }
 }
 </script>
