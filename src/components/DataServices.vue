@@ -19,7 +19,7 @@
                     <p class="text-13px md:text-xl">We gather your data solely with passenger safety in mind!</p>
                 </div>
             </div>
-            <Button msg="Submit Your Data!" class="mt-1 md:mt-14 md:mb-10 lg:text-2xl lg:px-10 lg:py-4 border-3 border-darkBlueText text-darkBlueText"/>
+            <Button msg="Submit Your Data!" class="mt-1 md:mt-14 md:mb-10 lg:text-2xl lg:px-10 lg:py-4 border-2 lg:border-3 border-darkBlueText text-darkBlueText"/>
         </div>
     </div>
 </template>
