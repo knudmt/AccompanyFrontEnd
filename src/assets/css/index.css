@@ -95,10 +95,9 @@ select {
 
 
 .active {
-  background-color: transparent;
   border-radius: none;
   font-weight: bold;
-  font-size: 15px;
+  background-color: transparent;
 }
 
 .textarea {
@@ -172,4 +171,28 @@ select {
     border: 1px solid black;
     border-radius: 9px;
     width: 10px;
+}
+
+
+.passengerHero, .crewHero {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.passengerHero {
+  background-image: url('../images/hero-airplane-1920.jpg');
+}
+
+.crewHero {
+  background-image: url('../images/CrewHero@2x.png');
+}
+
+
+
+.contact-wrapper {
+  background-image: url('../images/pexels-skitterphoto-227690.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

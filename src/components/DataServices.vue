@@ -7,19 +7,19 @@
             </div>
             <div class="data-card-wrapper flex-col md:flex md:flex-row justify-between px-6 md:px-0 items-center m-auto min-h-64">
                 <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md flex-col justify-center m-auto border-solid border-2 py-8 px-4 mb-4 md:mb-0">
-                    <div class="img-replace w-3/6 m-auto mb-4"></div> 
+                    <img src="../assets/images/icon-wallet.png" alt="" class="img-replace w-2/5 m-auto mb-4"> 
                     <p class="text-13px md:text-xl">Save money by reporting your height & weight to airlines quicker!</p>
                 </div>
-                <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md m-auto flex-col md:mx-16 justify-center border-solid border-2 py-8 px-4 mb-4 md:mb-0">
-                    <div class="img-replace w-3/6 m-auto mb-4"></div>
+                <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md m-auto flex-col md:mx-6 justify-center border-solid border-2 py-8 px-4 mb-4 md:mb-0">
+                    <img src="../assets/images/icon-medicine.png" alt="" class="img-replace w-2/5 m-auto mb-4">
                     <p class="text-13px md:text-xl">Gather information directly from other passengers on possible COVID-19 symptoms!</p>
                 </div>
                 <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md m-auto flex-col justify-center border-solid border-2 py-8 px-4 mb-4 md:mb-0">
-                    <div class="img-replace w-3/6 m-auto mb-4"></div>
+                    <img src="../assets/images/icon-security.png" alt="" class="img-replace w-2/5 m-auto mb-4">
                     <p class="text-13px md:text-xl">We gather your data solely with passenger safety in mind!</p>
                 </div>
             </div>
-            <Button msg="Submit Your Data!" class="mt-1 md:mt-14 md:mb-10 border-black"/>
+            <Button msg="Submit Your Data!" class="mt-1 md:mt-14 md:mb-10 lg:text-2xl lg:px-10 lg:py-4 border-3 border-darkBlueText text-darkBlueText"/>
         </div>
     </div>
 </template>

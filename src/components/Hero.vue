@@ -1,21 +1,45 @@
 <template>
-    <div class="hero-wrapper bg-sectionGrey px-10 md:px-28 pt-20 lg:pt-56 pb-16 lg:pb-40">
-        <div class="lg:w-5/6 w-full m-auto">
-            <h2 class="lg:text-5xl md:text-3xl text-lg md:p-12 md:pb-16 font-bold">Dynamic Title Text</h2>
-            <p class="lg:text-4xl max-w-screen-lg m-auto text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam, ducimus rem eveniet maiores libero.</p>
-            <Button msg="Choose Location" class="bg-seafoam text-white border-white mt-12 lg:mt-16.5" />
-        </div>
+    <div class="overflow-hidden">
+      <HeroTabs :tabs="['I’m a Passenger', 'I’m a Flight Crew Member']" :selected="selected" @selected="setSelected">
+        <Tab :isSelected="selected === 'I’m a Passenger'" >
+          <div :class="{ passengerHero: this.selected }">
+            <PassengerHero />
+          </div>
+        </Tab>
+        <Tab :isSelected="selected === 'I’m a Flight Crew Member'" >
+          <div :class="{ crewHero: this.selected }">
+            <CrewHero />
+          </div>
+        </Tab>
+      </HeroTabs> 
     </div>
 </template>
 
 
 <script>
-import Button from './Button';
+
+import HeroTabs from './HeroTabs';
+import Tab from './Tab';
+import PassengerHero from './PassengerHero';
+import CrewHero from './CrewHero';
 
 export default {
   name: 'Hero',
   components: {
-    Button,
+    HeroTabs,
+    Tab,
+    PassengerHero,
+    CrewHero,
+  },
+  data() {
+    return {
+      selected: 'I’m a Passenger'
+    }
+  },
+  methods: {
+    setSelected(tab) {
+      this.selected = tab;
+    }
   }
 }
 </script>

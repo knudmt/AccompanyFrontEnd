@@ -1,9 +1,10 @@
 <template>
     <header>
-        <div class="wrapper h-50px lg:h-28 w-full flex items-center justify-end">
-            <div :class="isOpen ? 'block' : 'hidden'" class="wrapper top-12 right-4 pt-1 absolute md:static md:flex">
+        <div class="wrapper w-full flex items-center justify-between">
+            <img src="../assets/images/AccompanyLogo@2x.png" alt="" class="lg:w-64 w-28 py-2 lg:py-0 ml-6 lg:ml-8">
+            <div :class="isOpen ? 'block' : 'hidden'" class="wrapper top-12 right-4 absolute md:static md:flex">
                 <nav id="nav" class="float-right bg-gray-300 md:bg-transparent">
-                    <div class="flex flex-col  md:flex-row border border-gray-400 relative border-opacity-60 md:border-none">
+                    <div class="flex flex-col  md:flex-row border border-gray-400 relative py-8 border-opacity-60 md:border-none">
                         <div class="triangle-outline md:hidden"></div>
                         <div class="triangle-up md:hidden"></div>
                         <router-link to="/" class="lg:mx-8 md:mx-4 border-b md:border-none text-grayText2 bg-white whitespace-nowrap py-1 md:py-0 text-15px lg:text-2xl" >Home</router-link>

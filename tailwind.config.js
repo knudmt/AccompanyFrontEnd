@@ -33,6 +33,10 @@ module.exports = {
         grayText: '$4e4e4e',
         lineBlue: '#11369D',
         grayText2: '#919191',
+        overlayGray: 'rgba(34, 34, 34, 0.75)',
+        overlayBlack: 'rgba(0, 0, 0, 0.75)',
+        bgBlue: '#CFD9E4',
+        footerBlue: '#93C5FD',
         
       },
       minHeight: {
@@ -43,7 +47,27 @@ module.exports = {
         '320px': '320px',
         '1320px': '1320px',
         '750px': '750px',
-      }
+      },
+      height: {
+        "10v": "10vh",
+        "20v": "20vh",
+        "30v": "30vh",
+        "40v": "40vh",
+        "50v": "50vh",
+        "60v": "60vh",
+        "70v": "70vh",
+        "75v": "75vh",
+        "80v": "80vh",
+        "90v": "90vh",
+        "100v": "100vh",
+      },
+      borderWidth: {
+        '3': '3px',
+      },
+      backgroundImage: theme => ({
+        'passengerHero': "url('../images/hero-airplane-1920.jpg')",
+        'crewHero': "url('../images/CrewHero@2x.png')",
+       })
     },
   },
   variants: {

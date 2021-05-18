@@ -1,6 +1,5 @@
 <template>
   <div class="container max-w-full">
-    <HeroTabs />
     <Hero />
     <DataServices />
     <Partners />
@@ -10,7 +9,6 @@
 
 <script>
 import Hero from '../components/Hero';
-import HeroTabs from '../components/HeroTabs';
 import DataServices from '../components/DataServices';
 import Partners from '../components/Partners';
 import Contact from '../components/Contact';
@@ -18,7 +16,6 @@ import Contact from '../components/Contact';
 export default {
   name: 'Home',
   components: { 
-    HeroTabs,
     Hero,
     DataServices,
     Partners,
@@ -29,7 +26,7 @@ export default {
  
 <style>
 #app {
-  font-family:'Roboto', sans-serif;;
+  font-family:'Helvetica', sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
