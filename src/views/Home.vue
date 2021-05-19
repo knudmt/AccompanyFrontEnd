@@ -2,7 +2,7 @@
   <div class="container max-w-full">
     <Hero />
     <DataServices />
-    <Partners />
+    <Partners class="bg-bgBlue" />
     <Contact />
   </div>
 </template>

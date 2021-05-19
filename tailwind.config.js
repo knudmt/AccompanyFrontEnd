@@ -22,6 +22,7 @@ module.exports = {
         '16.5': '4.5rem',
         '490px': '490px',
         '230px': '230px',
+        '9%': '9%',
 
       },
       colors: {
@@ -67,6 +68,9 @@ module.exports = {
       backgroundImage: theme => ({
         'passengerHero': "url('../images/hero-airplane-1920.jpg')",
         'crewHero': "url('../images/CrewHero@2x.png')",
+        'contactHero': "url('../images/contact-hero@2x.png')",
+        'careersHero': "url('../images/careers-hero@2x.png')",
+        'whyusHero': "url('../images/whyus-hero@2x.png')",
        })
     },
   },

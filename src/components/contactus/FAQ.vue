@@ -1,7 +1,7 @@
 <template>
-    <div class="bg-blue-100 ">
-        <div class="w-full flex flex-wrap">
-            <h4 class="text-darkBlueText font-bold text-xl mt-4 mb-8 m-auto lg:w-full">FAQ</h4>
+    <div class="bg-blue-100 lg:pb-4">
+        <div class="w-full flex flex-wrap max-w-screen-2xl m-auto">
+            <h4 class="text-black font-bold text-xl mt-8 mb-8 m-auto lg:w-full">FAQ</h4>
             <div class="px-9 mb-5 lg:px-2 lg:pl-8 lg:w-1/5">
                 <div class="shadow-md lg:h-full w-full bg-white rounded-md pt-8 border border-lineBlue border-opacity-20">
                     <h5 class="text-base w-4/5 m-auto text-darkBlueText border-b font-bold border-lineBlue border-opacity-30 pb-2 mb-2">How Does It Work?</h5>

@@ -3,7 +3,7 @@
       <ul class="tab-wrapper flex w-full text-white bg-overlayGray ">
         
         <li v-for="tab in tabs" :key="tab" class="w-3/6">
-          <a :class="{ active: tab === selected }" @click="setTab(tab)" class="w-full block py-2 px-6 lg:py-4 rounded-sm rounded-b-none bg-overlayBlack lg:text-3xl md:text-2xl text-13px text-center whitespace-nowrap">
+          <a :class="{ active: tab === selected }" @click="setTab(tab)" class="w-full block py-2 px-6 lg:py-3 rounded-sm rounded-b-none bg-overlayBlack lg:text-2xl md:text-xl text-13px text-center whitespace-nowrap">
           {{ tab }}
           </a>
         </li>

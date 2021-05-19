@@ -1,14 +1,14 @@
 <template>
   <div class="container max-w-full">
-    <Hero />
+    <ContactHero />
     <FormSection />
     <FAQ />
-    <Partners />
+    <Partners class="bg-white" />
   </div>
 </template>
 
 <script>
-import Hero from '../components/Hero';
+import ContactHero from '../components/heros/ContactHero';
 import FormSection from '../components/contactus/FormSection';
 import FAQ from '../components/contactus/FAQ.vue';
 import Partners from '../components/Partners';
@@ -21,7 +21,7 @@ export default {
     }
   },
   components: { 
-    Hero,
+    ContactHero,
     FormSection,
     FAQ,
     Partners,

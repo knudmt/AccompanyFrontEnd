@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Hero from '../components/Hero';
+import Hero from '../components/heros/CareersHero';
 import CareerInfo from '../components/careers/CareerInfo';
 import Contact from '../components/Contact';
 

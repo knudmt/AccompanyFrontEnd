@@ -77,15 +77,6 @@ select {
   }
 }
 
-.img-replace {
-	background-color:black;
-}
-
-.img-replace:after {
-  content: "";
-  display: block;
-  padding-bottom: 50%;
-}
 
 .img-replace:after {
   content: "";
@@ -124,8 +115,6 @@ select {
   max-width: 490px;
   max-height: 230px;
 }
-
-
 
 .check-mark {
   background: url('../images/check@2x.png');
@@ -173,11 +162,18 @@ select {
     width: 10px;
 }
 
+.partner-img {
+  max-width: 9rem;
+}
 
-.passengerHero, .crewHero {
+.passengerHero, .crewHero, .contactHero, .careersHero, .whyusHero {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.careersHero {
+  background-position: center 5%;
 }
 
 .passengerHero {

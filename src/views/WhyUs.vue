@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Hero from '../components/Hero';
+import Hero from '../components/heros/WhyUsHero';
 import About from '../components/whyus/About';
 import Mission from '../components/whyus/Mission';
 import Founder from '../components/whyus/Founder';
