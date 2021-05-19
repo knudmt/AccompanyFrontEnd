@@ -164,6 +164,7 @@ select {
 
 .partner-img {
   max-width: 9rem;
+  height: intrinsic;
 }
 
 .passengerHero, .crewHero, .contactHero, .careersHero, .whyusHero {
