@@ -2,7 +2,7 @@
   <div class="container max-w-full">
     <Hero />
     <CareerInfo />
-    <FAQ />
+    <Apply />
     <Contact />
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 import Hero from '../components/heros/CareersHero';
 import CareerInfo from '../components/careers/CareerInfo';
+import Apply from '../components/careers/ApplyNow';
 import Contact from '../components/Contact';
 
 export default {
@@ -22,6 +23,7 @@ export default {
   components: { 
     Hero,
     CareerInfo,
+    Apply,
     Contact,
   }
 }

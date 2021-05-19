@@ -71,6 +71,7 @@ module.exports = {
         'contactHero': "url('../images/contact-hero@2x.png')",
         'careersHero': "url('../images/careers-hero@2x.png')",
         'whyusHero': "url('../images/whyus-hero@2x.png')",
+        'careerGetPaid': "url('../images/career-get-paid-img@2x.png')",
        })
     },
   },
