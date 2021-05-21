@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-blue-100 lg:pb-4">
+    <div class="bg-bgBlue lg:pb-4">
         <div class="w-full flex flex-wrap max-w-screen-2xl m-auto">
             <h4 class="text-black font-bold text-xl mt-8 mb-8 m-auto lg:w-full">FAQ</h4>
             <div class="px-9 mb-5 lg:px-2 lg:pl-8 lg:w-1/5">

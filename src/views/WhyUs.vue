@@ -6,8 +6,9 @@
     <Founder />
     <HowItWorks />
     <DataAndBenifits />
+    <DonateTree />
     <Partners />
-    <Contact />
+    <Contact class="bg-bgBlue"/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Mission from '../components/whyus/Mission';
 import Founder from '../components/whyus/Founder';
 import HowItWorks from '../components/whyus/HowItWorks';
 import DataAndBenifits from '../components/whyus/DataAndBenifits';
+import DonateTree from '../components/whyus/DonateTree';
 import Partners from '../components/Partners';
 import Contact from '../components/Contact';
 
@@ -35,6 +37,7 @@ export default {
     Founder,
     HowItWorks,
     DataAndBenifits,
+    DonateTree,
     Partners,
     Contact,
   }

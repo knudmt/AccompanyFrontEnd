@@ -119,10 +119,6 @@ select {
   right: 16px;
 }
 
-.about-img {
-  max-width: 490px;
-  max-height: 230px;
-}
 
 .check-mark {
   background: url('../images/check@2x.png');
@@ -130,8 +126,8 @@ select {
   background-size: contain;
   background-position: center;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   min-width: 30px;
   margin-right: 10px;
 }
@@ -148,27 +144,19 @@ select {
   right: 16px;
 }
 
-.overlay::-webkit-scrollbar-track{
-  background-color: #ccc;
-  background-clip: content-box; 
-  border-radius: 10px;
+.arrow-left {
+  background: url('../images//Arrow-left@2x.png')
 }
 
-.overlay::-webkit-scrollbar{
-  width: 2px;
-  height: 5px;
-  background-color: #ccc;
-  background-clip: content-box; 
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-
-  background-clip: content-box;
+.arrow-right {
+  background: url('../images//arrow-right@2x.png')
 }
-.overlay::-webkit-scrollbar-thumb{
-    background-color: #818B99;
-    border: 1px solid black;
-    border-radius: 9px;
-    width: 10px;
+
+.arrow-left, .arrow-right {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
 }
 
 .partner-img {
@@ -199,4 +187,28 @@ select {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+
+
+
+/* SCROLLBAR */
+/* Let's get this party started */
+.overlay::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.overlay::-webkit-scrollbar-track {
+  background: rgba(0,0,0, 0.1);
+  border: 9px solid transparent;
+  background-clip: content-box;   /* THIS IS IMPORTANT */
+}
+
+/* Handle */
+.overlay::-webkit-scrollbar-thumb {
+  background: rgb(25,25,25);
+  border: 6px solid transparent;
+  border-radius: 50px;
+  background-clip: content-box;
 }

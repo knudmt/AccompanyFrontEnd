@@ -23,6 +23,7 @@ module.exports = {
         '490px': '490px',
         '230px': '230px',
         '9%': '9%',
+        "30%": '30%',
 
       },
       colors: {
@@ -48,6 +49,7 @@ module.exports = {
         '320px': '320px',
         '1320px': '1320px',
         '750px': '750px',
+        '350px': '350px',
       },
       height: {
         "10v": "10vh",
