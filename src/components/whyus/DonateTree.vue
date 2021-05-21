@@ -10,19 +10,19 @@
             <CarouselSlide :visibleSlide="visibleSlide" :index="0">
               <img
                 src="../../assets/images/one_tree_planted_logo@2x.png"
-                class="about-img bg-white my-4 lg:my-0 rounded-3xl lg:mt-12 m-auto w-5/12 lg:w-auto max-w-350px"
+                class="about-img bg-white my-4 lg:my-0 rounded-xl lg:rounded-3xl lg:mt-12 m-auto w-9/12 lg:w-auto max-w-350px"
               />
             </CarouselSlide>
             <CarouselSlide :visibleSlide="visibleSlide" :index="1">
               <img
                 src="../../assets/images/one_tree_planted_logo3@2x.png"
-                class="about-img bg-white my-4 rounded lg:my-0 lg:mt-12 m-auto w-5/12 lg:w-auto max-w-350px"
+                class="about-img bg-white my-4 rounded lg:my-0 lg:mt-12 m-auto w-9/12 lg:w-auto max-w-350px"
               />
             </CarouselSlide>
             <CarouselSlide :visibleSlide="visibleSlide" :index="2">
               <img
                 src="../../assets/images/one_tree_planted_logo2@2x.png"
-                class="about-img bg-white rounded my-4 lg:my-0 lg:mt-12 m-auto w-5/12 lg:w-auto max-w-350px"
+                class="about-img bg-white rounded my-4 lg:my-0 lg:mt-12 m-auto w-9/12 lg:w-auto max-w-350px"
               />
             </CarouselSlide>
           </Carousel>
