@@ -12,7 +12,7 @@
                 </div>
                 <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md m-auto flex-col md:mx-6 justify-center border-solid border-2 py-8 px-4 mb-4 md:mb-0">
                     <img src="../assets/images/icon-medicine.png" alt="" class="img-replace w-2/5 m-auto mb-4">
-                    <p class="text-13px md:text-xl">Gather information directly from other passengers on possible COVID-19 symptoms!</p>
+                    <p class="text-13px md:text-xl">Gather information directly from other passengers to participate in the CO2 tree planting service.</p>
                 </div>
                 <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md m-auto flex-col justify-center border-solid border-2 py-8 px-4 mb-4 md:mb-0">
                     <img src="../assets/images/icon-security.png" alt="" class="img-replace w-2/5 m-auto mb-4">

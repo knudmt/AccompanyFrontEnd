@@ -35,12 +35,6 @@
                 <img src="../../assets/images/clock-icon.png" alt="" class="w-6 h-6 mr-4">
                 <p class="text-sm my-4 lg:text-left">8:00am - 8:00pm MST</p>    
             </div>
-            
-            <div class="text-darkBlueText lg:text-left font-bold text-base lg:text-lg lg:mt-2">Our Address</div>
-            <div class="flex items-center justify-center lg:justify-start">
-                <img src="../../assets/images/PNG image 15@2x.png" alt="" class="w-6 h-6 mr-4">
-                <p class="text-sm my-4">518 17th St. Ste 900, Denver CO 80239</p>
-            </div>
         </div>
             
     </div>
