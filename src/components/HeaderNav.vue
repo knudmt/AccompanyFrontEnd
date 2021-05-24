@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="wrapper w-full flex items-center justify-between">
-            <img src="../assets/images/AccompanyLogo@2x.png" alt="" class="lg:w-48 w-28 py-2 ml-6 lg:ml-8">
+            <img src="../assets/images/AccompanyLogo@2x.png" alt="Accompany Logo" @click="$router.push('/');" class="lg:w-48 w-28 py-2 ml-6 cursor-pointer lg:ml-8">
             <div :class="isOpen ? 'block' : 'hidden'" class="wrapper top-12 right-4 absolute md:static md:flex">
                 <nav id="nav" class="float-right bg-gray-300 md:bg-transparent">
                     <div class="flex flex-col  md:flex-row border border-gray-400 relative items-center border-opacity-60 md:border-none">
