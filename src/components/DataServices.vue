@@ -19,7 +19,7 @@
                     <p class="text-13px md:text-xl">We gather your data solely with passenger safety in mind!</p>
                 </div>
             </div>
-            <Button msg="Submit Your Data!" class="mt-1 md:mt-14 md:mb-10 lg:text-xl lg:px-8 lg:py-3 border-2 lg:border-3 border-darkBlueText text-darkBlueText"/>
+            <Button @click.native="$router.push('DataServices'); scrollToTop();" msg="Submit Your Data!" class="mt-1 md:mt-14 md:mb-10 lg:text-xl lg:px-8 lg:py-3 border-2 lg:border-3 border-darkBlueText text-darkBlueText"/>
         </div>
     </div>
 </template>
@@ -32,6 +32,11 @@ export default {
   name: 'DataServices',
   components: {
     Button,
+  },
+  methods: {
+      scrollToTop() {
+          window.scrollTo(0,0);
+      }
   }
 }
 </script>

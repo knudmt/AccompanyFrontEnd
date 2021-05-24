@@ -6,20 +6,25 @@
                 <h3 class="text-2xl md:text-4xl lg:pb-3 font-bold text-white">Let's Get In Touch!</h3>
                 <p class="text-sm md:text-3xl pt-4 text-white leading-loose">Are there Airports or Hotels you want to see partner with us or are you looking to become a partner?</p>
               </div>
-              <Button msg="CONTACT US!" class="w-2/6 whitespace-nowrap bg-seafoam text-white mt-4 rounded-md border-none lg:px-10 lg:py-3 lg:text-xl lg:mt-0" />
+              <Button @click.native="$router.push('ContactUs'); scrollToTop();" msg="CONTACT US!" class="w-2/6 whitespace-nowrap bg-seafoam text-white mt-4 rounded-md border-none lg:px-10 lg:py-3 lg:text-xl lg:mt-0" />
             </div>
         </div>
     </div>
 </template>
 
 
-<script>
+<script> 
 import Button from './Button';
 
 export default {
   name: 'Contact',
   components: {
     Button,
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0,0);
+    }
   }
 }
 </script>
