@@ -73,7 +73,12 @@ module.exports = {
         'contactHero': "url('../images/contact-hero@2x.png')",
         'careersHero': "url('../images/careers-hero@2x.png')",
         'whyusHero': "url('../images/whyus-hero@2x.png')",
-        'careerGetPaid': "url('../images/career-get-paid-img@2x.png')",
+        'Hilton': "url('../images/Hilton-Logo@2x.png')",
+        'Hyatt': "url('../images/Hyatt-Logo@2x.png')",
+        'Marriott': "url('../images/Marriott-logo@2x.png')",
+        'Hartsfield': "url('../images/Hartsfield–Logo@2x.png')",
+        'Armstrong': "url('../images/Armstrong-Logo@2x.png')",
+        'Nashville': "url('../images/Nashville-Logo@2x.png')",
        })
     },
   },
