@@ -14,7 +14,6 @@
                         <div class="lg:mx-4 md:mx-4 border-b md:border-none text-black whitespace-nowrap text-15px bg-white lg:text-lg px-24 py-1 md:py-4 md:my-2 md:px-8 md:bg-footerBlue font-normal">ORDER NOW</div>
                     </div>
                 </nav>
-            <div class="smartSearch"></div>
             </div>
             <button class=" w-6 h-6 flex md:hidden flex-wrap items-center float-right mr-8 my-2" @click="toggle">
                 <span class="top block h-3px w-full rounded-xl bg-darkBlueText"></span>

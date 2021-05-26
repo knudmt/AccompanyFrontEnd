@@ -24,8 +24,19 @@
                     <span class="check-mark"></span>
                     <p class="mb-3 text-left text-sm lg:text-base">Passenger data will be secure with Accompany via data protection laws as airports and airlines already collect a lot of data about you before flights.</p>
                 </div>
-                <button class="px-4 py-2 ml-4 mt-4 border-2 font-bold lg:float-left text-13px lg:text-base rounded border-black">Submit Your Data!</button>
+                <button @click="$router.push('DataServices'); scrollToApply()"  class="px-4 py-2 ml-4 mt-4 border-2 font-bold lg:float-left text-13px lg:text-base rounded border-black">Submit Your Data!</button>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'DataAndBenifits',
+    methods: {
+        scrollToApply() {
+            window.scrollTo(0,600);
+        }
+    }
+}
+</script>
