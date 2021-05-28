@@ -3,7 +3,7 @@
         <div class="breadcrumbs flex">
             <a href="/OrderResturantPicker">Choose Restaurant</a>
             <a @click="viewCart = false" class="cursor-pointer mx-4" >Choose Meal</a>
-            <a v-if="viewCart" class="cursor-pointer" >View Cart</a>
+            <a v-if="viewCart">View Cart</a>
         </div>
         <div class="flex flex-wrap section-wrapper">
             <div v-for="product in menu" :key="product" v-show="!viewCart" :class="{ sectionTitle: product.section }" class="flex flex-col w-1/3">
