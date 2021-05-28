@@ -11,7 +11,7 @@
                         <router-link to="/WhyUs" class="lg:mx-8 md:mx-4 border-b md:border-none text-grayText2 bg-white whitespace-nowrap py-1 md:py-0 text-15px lg:text-xl w-full md:w-auto">Why Accompany?</router-link>
                         <router-link to="/Careers" class="lg:mx-8 md:mx-4 border-b md:border-none text-grayText2 bg-white whitespace-nowrap py-1 md:py-0 text-15px lg:text-xl w-full md:w-auto">Careers</router-link>
                         <router-link to="/ContactUs" class="lg:ml-8 lg:mr-4 md:mx-4 border-b md:border-none text-grayText2 bg-white whitespace-nowrap text-15px py-1 md:py-0 lg:text-xl w-full md:w-auto">Contact Us</router-link>
-                        <div class="lg:mx-4 md:mx-4 border-b md:border-none text-black whitespace-nowrap text-15px bg-white lg:text-lg px-24 py-1 md:py-4 md:my-2 md:px-8 md:bg-footerBlue font-normal">ORDER NOW</div>
+                        <div @click="$router.push('OrderResturantPicker')" class="lg:mx-4 md:mx-4 border-b md:border-none text-black whitespace-nowrap text-15px bg-white cursor-pointer lg:text-lg px-24 py-1 md:py-4 md:my-2 md:px-8 md:bg-footerBlue font-normal">ORDER NOW</div>
                     </div>
                 </nav>
             </div>

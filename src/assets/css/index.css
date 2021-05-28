@@ -189,7 +189,9 @@ select {
   background-size: cover;
 }
 
-
+.sectionTitle {
+  width: 100%;
+}
 
 
 /* SCROLLBAR */

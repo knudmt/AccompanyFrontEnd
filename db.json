@@ -1,0 +1,161 @@
+{
+    "vendors": [
+        { 
+          "id": "AuntieAnne", 
+          "title": "Auntie Anne's", 
+          "image": "Rectangle2.png",
+          "fee": "$0.00", 
+          "deliveryTime": "35-45", 
+          "menu": [
+                {
+                  "item": "cheese"
+                }
+          ]
+        },
+        { 
+            "id": "ChickFilA", 
+            "title": "Chick Fil A", 
+            "image": "Rectangle2.png",
+            "fee": "$0.00", 
+            "deliveryTime": "35-45", 
+            "menu": [
+                {
+                    "item": "sauce"
+                }
+            ]
+        },
+        { 
+            "id": "AuntieAnne2", 
+            "title": "Auntie Anne'z", 
+            "image": "Rectangle2.png",
+            "fee": "$0.00", 
+            "deliveryTime": "35-45", 
+            "menu": [
+                {
+                    "item": "roni"
+                  }
+            ]
+        }
+    ],
+    "AuntieAnne": [
+        {
+            "section": "Meals"
+        },
+        {
+            "title": "item1",
+            "id": 1,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 9.48,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item2",
+            "id": 2,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 8.99,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item3",
+            "id": 3,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 9.21,
+            "image": "Square2.png"
+        },
+        {
+            "section": "Entrees"
+        },
+        {
+            "title": "item1",
+            "id": 4,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 6.41,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item2",
+            "id": 5,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 6.82,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item3",
+            "id": 6,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 4.48,
+            "image": "Square2.png"
+        },
+        {
+            "section": "Sides"
+        },
+        {
+            "title": "item1",
+            "id": 7,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 3.99,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item2",
+            "id": 8,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 3.40,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item3",
+            "id": 9,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 2.48,
+            "image": "Square2.png"
+        },
+        {
+            "section": "Beverages"
+        },
+        {
+            "title": "item1",
+            "id": 10,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 1.48,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item2",
+            "id": 11,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 1.48,
+            "image": "Square2.png"
+        },
+        {
+            "title": "item3",
+            "id": 12,
+            "desc": "Short Description Here… Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "price": 1.48,
+            "image": "Square2.png"
+        }
+        
+    ],
+    "ChickFilA": [
+        {
+            "title": "item1"
+        },
+        {
+            "title": "item2"
+        },
+        {
+            "title": "item3"
+        }
+    ],
+    "AuntieAnne2": [
+        {
+            "title": "item1"
+        },
+        {
+            "title": "item2"
+        },
+        {
+            "title": "item3"
+        }
+    ]
+  }

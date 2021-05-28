@@ -1,49 +1,28 @@
 <template>
     <div class="container max-w-full">
         <Hero />
-        <VendorList @view-menu="fetchMenu" v-if="show" :vendors="vendors" />
-        <div v-else>
-            
-            <ProductList :menu="menu"/>
-          
-
-
-        </div>
-        
+        <ProductList :vendors="vendors" />
     </div>
 </template>
 
-
 <script>
 import Hero from '../components/heros/OrderResturantHero';
-import VendorList from '../components/orderpage/VendorList';
 import ProductList from '../components/orderpage/ProductList';
-
 export default {
   name: 'LocationPickerView',
   components: { 
     Hero,
-    VendorList,
     ProductList,
   },
   data() {
         return {
             vendors: [],
-            menu: [],
-            show: true
         }
     }, 
     methods: {
         async fetchVendors(){
             const res = await fetch('http://localhost:5000/vendors')
             const data = await res.json()
-            return data
-        },
-        async fetchMenu(id){
-            const res = await fetch(`http://localhost:5000/${id}`)
-            const data = await res.json()
-            this.menu = data
-            this.show = !this.show
             return data
         }
     },
