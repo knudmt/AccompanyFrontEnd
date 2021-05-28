@@ -1,10 +1,11 @@
 <template>
-    <div class="flex flex-col flex-wrap justify-center items-center w-1/3">
+    <div class="flex flex-col flex-wrap justify-center items-center w-1/3 px-12">
         <img :src="require(`../../assets/images/` + backgroundImg)" :alt="product.id">
-        <h5>{{ product.title }}</h5>
-        <p>{{ product.desc }}</p>
-        <p>${{ formatPrice(product.price) }}</p>
-        <Button @click.native="$emit('add-cart', product)"  msg="Add to Cart" class="bg-seafoam rounded-md text-white"></Button>
+        <h5 class="font-bold text-lg mt-2">{{ product.title }}</h5>
+        <p class="text-15px text-gray-500 ">{{ product.short }}</p>
+        <p class="text-15px text-gray-500 px-8">{{ product.long }}</p>
+        <p class="text-base font-bold">${{ formatPrice(product.price) }}</p>
+        <Button @click.native="$emit('add-cart', product)"  msg="Add to Cart" class="bg-seafoam rounded-md lg:text-sm lg:px-8 text-white mt-1"></Button>
     </div>
 </template>
 

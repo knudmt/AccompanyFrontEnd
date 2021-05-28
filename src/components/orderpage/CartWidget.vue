@@ -1,14 +1,18 @@
 <template>
-    <div class="w1/2 m-auto max-w-lg border border-black rounded-md">
-        <div>
-            <img src="" alt="">
+    <div class="translateCenter left-1/2 m-auto w-1/2 max-w-5xl py-5 px-6 border flex justify-between bg-white fixed bottom-10 border-black rounded-md">
+        <div class="font-bold flex items-center">
+            <div class="bg-cartImage w-7 h-7 mr-2 font-bold bg-no-repeat bg-cover text-15px bg-right pr-5"></div>
             {{ itemCount }} Item(s)
         </div>
-        <div>
-            Total: ${{ formatPrice(totalPrice) }}
+        <div class="flex items-center flex-grow ml-16">
+            <div class="rounded-full bg-black h-3 w-3 mr-4"></div>
+            <div class="flex items-center pt-px">
+                <strong class="mr-2">Total:</strong> ${{ formatPrice(totalPrice) }}
+            </div>
+          
         </div>
-        <div>
-            <div @click="$emit('view-cart')">View Cart</div>
+        <div class="flex items-center">
+            <div @click="$emit('view-cart')" class="bg-arrowRight font-bold bg-no-repeat bg-8px text-15px bg-right pr-5">View Cart</div>
         </div>
     </div>
 </template>

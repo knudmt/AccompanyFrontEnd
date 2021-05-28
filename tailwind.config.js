@@ -10,6 +10,13 @@ module.exports = {
           '15px': '15px',
           '23px': '23px',
       },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+       '50%': '50%',
+       '8px': '8px',
+      },
       spacing: {
         '1/8' : '12.5%',
         '9%': '9.5%',
@@ -79,7 +86,12 @@ module.exports = {
         'Hartsfield': "url('../images/Hartsfield–Logo@2x.png')",
         'Armstrong': "url('../images/Armstrong-Logo@2x.png')",
         'Nashville': "url('../images/Nashville-Logo@2x.png')",
-       })
+        'arrowRight': "url('../images/arrow-right@2x.png')",
+        'cartImage': "url('../images/cartImage.png')",
+       }),
+       lineHeight: {
+        '15px': '15px',
+       }
     },
   },
   variants: {

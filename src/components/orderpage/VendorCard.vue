@@ -1,14 +1,14 @@
 <template>
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-start lg:px-20">
         <img :src="require(`../../assets/images/` + backgroundImg)" :alt="vendor.id">
-        <h5>{{ vendor.title }}</h5>
-        <div class="lg:flex">
-            <div>
-                <p>{{ vendor.fee }} delivery fee</p>
-                <p>{{ vendor.deliveryTime }} mins Delivery</p>
+        <h5 class="font-bold text-left mt-3">{{ vendor.title }}</h5>
+        <div class="lg:flex justify-between items-center w-full">
+            <div class="mt-2 flex-grow">
+                <p class="text-left leading-15px  text-13px text-gray-500">{{ vendor.fee }} delivery fee</p>
+                <p class="text-left leading-15px text-13px text-gray-500">{{ vendor.deliveryTime }} mins Delivery</p>
             </div>
             <div class="">
-                <Button @click.native="$emit('view-menu', vendor.id)"  msg="View Menu" class="bg-seafoam text-white"></Button>
+                <button @click="$emit('view-menu', vendor.id)" class="bg-seafoam px-4 py-1 font-bold rounded text-15px text-white">View Menu</button>
             </div>
             
         </div>
@@ -17,12 +17,10 @@
 </template>
 
 <script>
-import Button from "../Button";
 
 export default {
     name: 'VendorCard',
     components: {
-        Button,
     },
     props: {
         vendor: Object

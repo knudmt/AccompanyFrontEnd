@@ -174,6 +174,11 @@ select {
   background-position: center 5%;
 }
 
+.breadcrumb:last-child {
+  font-weight: bold;
+  color: #122B72;
+}
+
 .passengerHero {
   background-image: url('../images/hero-airplane-1920.jpg');
 }
@@ -191,8 +196,17 @@ select {
 
 .sectionTitle {
   width: 100%;
+  margin: 4rem 0 1rem 0;
+  padding-left: 2rem;
 }
 
+.sectionTitle:first-child {
+  margin-top: 2rem;
+}
+
+.translateCenter {
+  transform: translate(-50%, -50%);
+}
 
 /* SCROLLBAR */
 /* Let's get this party started */
