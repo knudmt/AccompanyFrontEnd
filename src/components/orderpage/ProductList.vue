@@ -1,17 +1,21 @@
 <template>
-    <div class="lg:px-40 pt-4 max-w-screen-2xl mb-16 m-auto">
-        <div class="breadcrumbs flex mb-6">
+    <div class="lg:px-40 pt-4 pb-16 m-auto max-w-" :class="{ 'bg-bgBlue': showCheckout, 'max-w-screen-2xl': !showCheckout }">
+        <div v-if="!hideBreadcrumb" class="breadcrumbs flex mb-6">
             <a href="/OrderResturantPicker" class="bg-arrowRight breadcrumb bg-no-repeat bg-right bg-8px pr-6">Choose Restaurant</a>
             <a @click="viewCart = false" class="cursor-pointer mx-3 bg-arrowRight breadcrumb bg-no-repeat bg-right bg-8px pr-6" >Choose Meal</a>
             <a v-if="viewCart" class="breadcrumb">View Cart</a>
         </div>
         <div class="flex flex-wrap section-wrapper">
-            <div v-for="product in menu" :key="product" v-show="!viewCart" :class="{ sectionTitle: product.section }" class="flex flex-col w-1/3">
-                <div v-if="product.section" class="text-left w-full text-darkBlueText lg:text-xl font-bold">{{ product.section }}</div>
-                <ProductCard @add-cart="addToCart(product)" :product="product" class="locationOption w-full flex py-2 px-6 lg:py-2 rounded-sm rounded-b-none text-gray-600 lg:text-lg md:text-base text-13px text-center cursor-pointer" />
+            <div v-if="!hideMenu" class="flex flex-wrap section-wrapper">
+                <div v-for="product in menu" :key="product" v-show="!viewCart" :class="{ sectionTitle: product.section }" class="flex flex-col w-1/3">
+                    <div v-if="product.section" class="text-left w-full text-darkBlueText lg:text-xl font-bold">{{ product.section }}</div>
+                    <ProductCard @add-cart="addToCart(product)" :product="product" class="locationOption w-full flex py-2 px-6 lg:py-2 rounded-sm rounded-b-none text-gray-600 lg:text-lg md:text-base text-13px text-center cursor-pointer" />
+                </div>
             </div>
-            <CartList :cart="cart" v-if="viewCart" />
+            
+            <CartList :cart="cart" v-if="viewCart" @show-checkout="showCheckoutScreen()" />
             <CartWidget :cart="cart" v-if="!viewCart && showCartWidget" :itemCount="itemCount" @view-cart="viewCart = !viewCart" :totalPrice="totalPrice"/>
+            <Checkout v-if="showCheckout" />
         </div>
     </div>
 </template>
@@ -20,6 +24,7 @@
 import ProductCard from './ProductCard'
 import CartList from './CartList'
 import CartWidget from './CartWidget'
+import Checkout from './Checkout'
 
 export default {
     name: 'ProductList',
@@ -27,6 +32,7 @@ export default {
         ProductCard,
         CartList,
         CartWidget,
+        Checkout,
         
     },
     props: {
@@ -38,7 +44,10 @@ export default {
             showCartWidget: false,
             itemCount: 0,
             totalPrice: 0,
-            viewCart: false
+            viewCart: false, 
+            showCheckout: false,
+            hideMenu: false,
+            hideBreadcrumb: false,
         }
     },
     methods: {
@@ -56,6 +65,13 @@ export default {
             this.calculateTotal(product.price)
             this.showCartWidget = true
         }, 
+        showCheckoutScreen() {
+            this.showCheckout = true
+            this.viewCart = false
+            this.showCartWidget = false
+            this.hideMenu = true
+            this.hideBreadcrumb = true
+        }
     },
 }
 </script>

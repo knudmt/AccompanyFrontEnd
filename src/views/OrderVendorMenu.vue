@@ -8,6 +8,7 @@
 <script>
 import Hero from '../components/heros/OrderResturantHero';
 import ProductList from '../components/orderpage/ProductList';
+
 export default {
   name: 'LocationPickerView',
   components: { 
@@ -30,5 +31,4 @@ export default {
         this.vendors = await this.fetchVendors()
     },
 }
-
 </script>

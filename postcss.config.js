@@ -3,4 +3,10 @@ module.exports = {
     tailwindcss: {},
     autoprefixer: {},
   },
+  overrides: [
+    {
+      files: ["*.vue"],
+      processor: "vue/.vue"
+    }
+  ],
 }
