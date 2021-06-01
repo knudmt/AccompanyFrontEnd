@@ -1,6 +1,5 @@
 <template>
     <div class="container max-w-full">
-        <Hero />
         <VendorList @view-menu="fetchMenu" v-if="show" :vendors="vendors" />
         <div v-else>
             
@@ -15,14 +14,13 @@
 
 
 <script>
-import Hero from '../components/heros/OrderResturantHero';
+
 import VendorList from '../components/orderpage/VendorList';
 import ProductList from '../components/orderpage/ProductList';
 
 export default {
   name: 'LocationPickerView',
   components: { 
-    Hero,
     VendorList,
     ProductList,
   },

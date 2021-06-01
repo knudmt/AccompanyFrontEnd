@@ -35,7 +35,7 @@
                         <currency-input v-model="value" id="leaveATip" currency="USD" name="Tip" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" />
                     </div>
                     <div>
-                        <label for="DeliveryDate block w-full">When Should We Deliver?</label>
+                        <label for="DeliveryDate" class="block w-full">When Should We Deliver?</label>
                         <input type="date" id="DeliveryDateTime" name="DeliveryDate"
                             value="Today"
                             min="2021-01-01" max="2040-12-31" required>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="w-full flex justify-center">
-                    <input type="submit" :value="'Pay $' + grandTotal" class="">
+                    <input type="submit" :value="'Pay $' + grandTotal" class="py-2 px-8 bg-seafoam rounded-md text-white text-lg font-bold">
                 </div>
                 
             </form>

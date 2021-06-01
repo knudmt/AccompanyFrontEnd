@@ -51,6 +51,7 @@ module.exports = {
       minHeight: {
         '320px': '320px',
         '1320px': '1320px',
+        '800px': '800px'
       },
       maxWidth: {
         '320px': '320px',
@@ -88,6 +89,7 @@ module.exports = {
         'Nashville': "url('../images/Nashville-Logo@2x.png')",
         'arrowRight': "url('../images/arrow-right@2x.png')",
         'cartImage': "url('../images/cartImage.png')",
+        'orderNow': "url('../images/orderNow.png')",
        }),
        lineHeight: {
         '15px': '15px',
