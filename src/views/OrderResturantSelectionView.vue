@@ -3,7 +3,7 @@
         <VendorList @view-menu="fetchMenu" v-if="show" :vendors="vendors" />
         <div v-else>
             
-            <ProductList :menu="menu"/>
+            <ProductList :locationName="locationName" :selectedVendor="selectedVendor" :menu="menu"/>
           
 
 
@@ -28,20 +28,25 @@ export default {
         return {
             vendors: [],
             menu: [],
-            show: true
+            show: true,
+            selectedVendor: '',
         }
     }, 
+    props: {
+        locationName: String
+    },
     methods: {
         async fetchVendors(){
             const res = await fetch('http://localhost:5000/vendors')
             const data = await res.json()
             return data
         },
-        async fetchMenu(id){
-            const res = await fetch(`http://localhost:5000/${id}`)
+        async fetchMenu(vendor){
+            const res = await fetch(`http://localhost:5000/${vendor.id}`)
             const data = await res.json()
             this.menu = data
             this.show = !this.show
+            this.selectedVendor = vendor.title
             return data
         }
     },

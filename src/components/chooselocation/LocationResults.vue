@@ -3,12 +3,12 @@
       <ToggleSwitch :options="['Airports', 'Hotels']" :selected="selected" @selected="setSelected">
         <ToggleOption :isSelected="selected === 'Airports'" >
           <div :class="{ airportResults: this.selected }">
-            <AirportResults :airportOptions="airportOptions" />
+            <AirportResults :airportOptions="airportOptions" @location-selected="updateLocation" />
           </div>
         </ToggleOption>
         <ToggleOption :isSelected="selected === 'Hotels'" >
           <div :class="{ hotelResults: this.selected }">
-            <HotelResults :hotelOptions="hotelOptions" />
+            <HotelResults :hotelOptions="hotelOptions" @location-selected="updateLocation" />
           </div>
         </ToggleOption>
       </ToggleSwitch> 
@@ -95,6 +95,9 @@ export default {
   methods: {
     setSelected(option) {
       this.selected = option;
+    },
+    updateLocation(option) {
+      this.$emit('update-location', option)
     }
   }
 }

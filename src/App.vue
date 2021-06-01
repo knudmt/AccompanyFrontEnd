@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <HeaderNav />
+    <HeaderNav :selectedLocation="selectedLocation" />
     <div id="contentDiv" class="max-w-screen-3xl m-auto">
-        <router-view />
+        <router-view @updated-location="updateLocation" :locationName="locationName" />
     </div>
     <Footer />
   </div>
@@ -17,7 +17,19 @@ export default {
   components: {
     HeaderNav,
     Footer,
-  }
+  },
+  data() {
+    return {
+      selectedLocation: false,
+      locationName : 'Please select a location'
+    }
+  },
+  methods: {
+      updateLocation(option) {
+      this.locationName = option.name;
+      this.selectedLocation = true;
+    }
+  } 
 }
 </script>
 

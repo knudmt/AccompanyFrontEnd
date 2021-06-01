@@ -3,7 +3,7 @@
     <h2 class="text-left text-darkBlueText text-xl font-bold mb-12 lg:mx-12">All Hotels</h2>
     <ul>
         <li :key="hotelOption.id" v-for="hotelOption in hotelOptions">
-            <HotelOptionCard :hotelOption="hotelOption" />
+            <HotelOptionCard :hotelOption="hotelOption" @location-selected="locationSelected" />
         </li>
     </ul>
 </div>
@@ -19,6 +19,11 @@ export default {
    },
    props: {
        hotelOptions: Array
+   },
+   methods: {
+       locationSelected(hotelOption) {
+           this.$emit('location-selected', hotelOption)
+       }
    }
 }
 </script>

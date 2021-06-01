@@ -17,7 +17,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/WhyUs.vue"),
+      import("../views/WhyUs.vue"),
   },
   {
     path: "/ContactUs",
@@ -26,7 +26,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/ContactUs.vue"),
+      import("../views/ContactUs.vue"),
   },
   {
     path: "/Careers",
@@ -35,7 +35,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Careers.vue"),
+      import("../views/Careers.vue"),
   },
   {
     path: "/DataServices",
@@ -44,7 +44,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/DataServicesView.vue"),
+      import("../views/DataServicesView.vue"),
   },
   {
     path: "/LocationPicker",
@@ -53,7 +53,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/LocationPickerView.vue"),
+      import("../views/LocationPickerView.vue"),
   },
   {
     path: "/OrderResturantPicker",
@@ -62,7 +62,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/OrderResturantSelectionView.vue"),
+      import("../views/OrderResturantSelectionView.vue"),
   },
   {
     path: "/OrderVendorMenu",
@@ -71,7 +71,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/OrderVendorMenu.vue"),
+      import("../views/OrderVendorMenu.vue"),
   },
 ];
 

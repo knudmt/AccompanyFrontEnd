@@ -19,7 +19,7 @@
         </div>
 
 
-        <Button @click.native="$router.push('/')" msg="ORDER NOW!" class="bg-seafoam text-white border-white mt-2 lg:mt-16 lg:px-6 lg:py-2 lg:text-lg w-1/2 lg:w-48 rounded-md m-auto" />
+        <Button @click.native="orderNowPush" msg="ORDER NOW!" class="bg-seafoam text-white border-white mt-2 lg:mt-16 lg:px-6 lg:py-2 lg:text-lg w-1/2 lg:w-48 rounded-md m-auto" />
     </div>
 </template>
 
@@ -33,6 +33,12 @@ export default {
     },
     props: {
         hotelOption: Object
+    },
+    methods: {
+        orderNowPush() {
+            this.$emit('location-selected', this.hotelOption);
+            this.$router.push('OrderResturantPicker');
+        }
     }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="container max-w-full">
         <Hero />
-        <LocationResults />
+        <LocationResults @update-location="updateLocation" />
         <Search />
     </div>
 </template>
@@ -18,6 +18,14 @@ export default {
     LocationResults,
     Search,
   },
+  props: {
+    locationName: String,
+  },
+  methods: {
+    updateLocation(option) {
+      this.$emit('updated-location', option);
+    }
+  }
 }
 
 </script>

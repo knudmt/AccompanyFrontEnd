@@ -1,7 +1,7 @@
 <template>
     <div>
         <span v-if="!hideMenu">
-            <MenuHero v-if="!viewCart" />
+            <MenuHero v-if="!viewCart" :locationName="locationName" :selectedVendor="selectedVendor" />
         </span>
         <CartHero v-if="viewCart" />
         <CheckoutHero v-if="showCheckout" />
@@ -50,6 +50,9 @@ export default {
     },
     props: {
         menu: Array,
+        locationName: String,
+        selectedVendor: String,
+
     },
     data() {
         return {
