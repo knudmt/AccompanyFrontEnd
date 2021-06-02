@@ -11,17 +11,20 @@
             </div>
         </div>
 
-        <div class="flex flex-col float-right">
-            <span>Tax: {{taxes}} </span>
-            <span>Fees: {{ fees }} </span>
-            <span>Total: {{grandTotal}}</span>
+        <div class="flex flex-col justify-start float-right">
+            <div class="mb-4 px-28 mt-8 flex justify-between"><span class="mr-24 text-xl text-darkBlueText font-bold">Tax:</span><span class="text-2xl text-darkBlueText font-bold">${{taxes}}</span></div>
+            <div class="mb-4 px-28 flex justify-between"><span class="mr-24 text-xl text-darkBlueText font-bold">Fees:</span><span class="text-2xl text-darkBlueText font-bold">${{ fees }} </span></div>
+            <div class="border-t border-gray-500 mb-12 px-28 pt-4 flex justify-between"><span class="mr-24 text-2xl text-darkBlueText font-bold">Total:</span><span class="text-2xl text-darkBlueText font-bold">${{grandTotal}}</span></div>
         </div>
         <div class="w-full flex justify-between">
             <div class="flex flex-col">
-                <button>Back to Menu</button>
-                <a href="#">Browse Restaurants </a>
+                <button class="py-2 px-16 mb-2 bg-white border-2 border-darkBlueText text-darkBlueText text-lg font-bold">Back to Menu</button>
+                <a class="underline" href="#">Browse Restaurants </a>
             </div>
-            <button @click="$emit('show-checkout')">Proceed To Checkout</button>
+            <span>
+                <button class="px-6 py-3 text-white font-bold bg-seafoam rounded-sm text-lg" @click="$emit('show-checkout')">Proceed To Checkout</button>
+            </span>
+            
         </div>
     </div>
 </template>

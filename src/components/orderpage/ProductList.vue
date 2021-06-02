@@ -29,7 +29,7 @@
 
 <script>
 import ProductCard from './ProductCard'
-import CartList from './CartList'
+import CartList from './TheCartList'
 import CartWidget from './CartWidget'
 import Checkout from './Checkout'
 import MenuHero from '../heros/MenuHero'
