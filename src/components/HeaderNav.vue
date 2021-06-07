@@ -36,20 +36,13 @@ export default {
         selectedLocation: Boolean
     },
     methods: {
-        toggle() {
-            this.isOpen = !this.isOpen
-        },
+        
         orderNowPush() {
             if(this.selectedLocation) {
                 this.$router.push('OrderResturantPicker')
             } else {
                 this.$router.push('LocationPicker')
             }
-        }
-    },
-    watch: {
-        '$route'() {
-            this.isOpen = false
         }
     }
 }

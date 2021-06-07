@@ -4,7 +4,7 @@
         <div class="flex flex-col lg:text-left lg:flex-grow lg:ml-12">
             <h5 class="text-darkBlueText font-bold text-lg">{{ airportOption.name }}</h5>
             <p class="mb-2">{{ airportOption.address }}</p>
-            <div class="star-rating flex justify-center lg:justify-start mb-3">
+            <!-- <div class="star-rating flex justify-center lg:justify-start mb-3">
                 <i class="far fa-star mr-1" aria-hidden="true"></i>
                 <i class="far fa-star mr-1" aria-hidden="true"></i>
                 <i class="far fa-star mr-1" aria-hidden="true"></i>
@@ -14,7 +14,7 @@
             <div class="flex justify-center lg:justify-start">
                 <img src="../../assets/images/FoodIcon@2x.png" class="w-6" alt="fork and spoon icon">
                 <div class="counter">00</div>
-            </div>
+            </div> -->
         </div>
         
        

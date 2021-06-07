@@ -4,7 +4,7 @@
     <div id="contentDiv" class="max-w-screen-3xl m-auto">
         <router-view @updated-location="updateLocation" :locationName="locationName" />
     </div>
-    <Footer />
+    <Footer :selectedLocation="selectedLocation" />
   </div>
 </template>
 

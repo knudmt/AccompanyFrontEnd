@@ -1,12 +1,12 @@
 <template>
     <div class="bg-footerBlue p-7">
         <ul class="flex w-full lg:w-3/6 m-auto max-w-750px justify-around flex-wrap">
-            <li class="w-3/12 text-15px md:text-xl font-bold mb-8">Order Now</li>
-            <li class="w-3/12 text-15px md:text-xl  font-bold">Home</li>
-            <li class="w-3/12 text-15px md:text-xl font-bold">Why Us?</li>
-            <li class="w-3/12 text-15px md:text-xl font-bold">Contact Us</li>
-            <li class="w-3/6 text-15px md:text-xl font-bold">Careers</li>
-            <li class="w-3/6 text-15px md:text-xl font-bold">Privacy Policy</li>
+            <div @click="orderNowPush" class="cursor-pointer w-3/12 text-15px md:text-xl font-bold mb-8">Order Now</div>
+            <router-link to="/" class="w-3/12 text-15px md:text-xl  font-bold">Home</router-link>
+            <router-link to="/WhyUs" class="w-3/12 text-15px md:text-xl font-bold">Why Us?</router-link>
+            <router-link to="/ContactUs" class="w-3/12 text-15px md:text-xl font-bold">Contact Us</router-link>
+            <router-link to="/Careers" class="w-3/6 text-15px md:text-xl font-bold">Careers</router-link>
+            <router-link to="/PrivacyPolicy" class="w-3/6 text-15px md:text-xl font-bold">Privacy Policy</router-link>
         </ul>
         <div class="flex-col md:flex md:flex-row-reverse justify-between">
             
@@ -19,3 +19,26 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'Footer',
+    props: {
+        selectedLocation: Boolean
+    },
+    methods: {
+       orderNowPush() {
+            if(this.selectedLocation) {
+                this.$router.push('OrderResturantPicker')
+            } else {
+                this.$router.push('LocationPicker')
+            }
+        } 
+    },
+    watch: {
+        '$route'() {
+            this.isOpen = false
+        }
+    }
+}
+</script>
