@@ -16,6 +16,7 @@ module.exports = {
         'contain': 'contain',
        '50%': '50%',
        '8px': '8px',
+       '5px': '5px'
       },
       spacing: {
         '1/8' : '12.5%',

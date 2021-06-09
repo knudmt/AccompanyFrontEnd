@@ -14,7 +14,7 @@
         <div class="flex flex-col justify-start float-right">
             <div class="mb-4 px-28 mt-8 flex justify-between"><span class="mr-24 text-xl text-darkBlueText font-bold">Tax:</span><span class="text-2xl text-darkBlueText font-bold">${{taxes}}</span></div>
             <div class="mb-4 px-28 flex justify-between"><span class="mr-24 text-xl text-darkBlueText font-bold">Fees:</span><span class="text-2xl text-darkBlueText font-bold">${{ fees }} </span></div>
-            <div class="border-t border-gray-500 mb-12 px-28 pt-4 flex justify-between"><span class="mr-24 text-2xl text-darkBlueText font-bold">Total:</span><span class="text-2xl text-darkBlueText font-bold">${{grandTotal}}</span></div>
+            <div class="border-t border-gray-500 mb-12 px-28 pt-4 flex justify-between"><span class="mr-24 text-2xl text-darkBlueText font-bold">Total:</span><span class="text-2xl text-darkBlueText font-bold">${{ formatPrice(totalPrice) }}</span></div>
         </div>
         <div class="w-full flex justify-between">
             <div class="flex flex-col">
@@ -39,6 +39,7 @@ export default {
     },
     props: {
         cart: Array,
+        totalPrice: Number
     },
     data() {
         return {
@@ -46,6 +47,12 @@ export default {
             fees: 0,
             grandTotal: 0,
         }
-    }
+    },
+    methods: {
+        formatPrice(value) {
+        let val = (value/1).toFixed(2)
+        return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
+        }
+    },
 }
 </script>

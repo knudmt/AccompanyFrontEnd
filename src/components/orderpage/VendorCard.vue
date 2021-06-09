@@ -7,8 +7,8 @@
                 <p class="text-left leading-15px  text-13px text-gray-500">{{ vendor.fee }} delivery fee</p>
                 <p class="text-left leading-15px text-13px text-gray-500">{{ vendor.deliveryTime }} mins Delivery</p>
             </div>
-            <div class="">
-                <button @click="$emit('view-menu', vendor)" class="bg-seafoam px-4 py-1 font-bold rounded text-15px text-white">View Menu</button>
+            <div class="mt-4">
+                <button @click="$emit('view-menu', vendor)" class="bg-seafoam lg:px-4 px-10 py-1 font-bold rounded text-15px text-white">View Menu</button>
             </div>
             
         </div>
