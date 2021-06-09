@@ -87,10 +87,10 @@ export default {
         tip: 0.00,
         date: '',
         time: '',
-        cardNum,
-        fullNameOnCard,
-        CVV,
-        expDate,
+        cardNum: '',
+        fullNameOnCard: '',
+        CVV: '',
+        expDate: '',
 
     }),
     methods: {
