@@ -47,7 +47,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 9.48,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item2",
@@ -55,7 +56,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 8.99,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item3",
@@ -63,7 +65,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 9.21,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "section": "Entrees"
@@ -82,7 +85,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 6.82,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item3",
@@ -90,7 +94,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 4.48,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "section": "Sides"
@@ -101,7 +106,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 3.99,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item2",
@@ -109,7 +115,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 3.40,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item3",
@@ -117,7 +124,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 2.48,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "section": "Beverages"
@@ -128,7 +136,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 1.48,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item2",
@@ -136,7 +145,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 1.48,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         },
         {
             "title": "item3",
@@ -144,7 +154,8 @@
             "short": "Short Description Here…",
             "long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "price": 1.48,
-            "image": "Square2.png"
+            "image": "Square2.png",
+            "quantity": 1
         }
         
     ],

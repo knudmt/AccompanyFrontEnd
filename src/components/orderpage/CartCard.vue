@@ -10,7 +10,7 @@
                 </div> 
             </div>
            
-            <Quantity class="font-bold" />
+            <Quantity class="font-bold" :product="product" :totalPrice="totalPrice" @incremented="incremented()" @decremented="decremented()" />
             <p class="font-bold">${{ formatPrice(product.price) }}</p>
         </div>
     </div>
@@ -25,7 +25,8 @@ export default {
         Quantity
     },
     props: {
-        product: Object
+        product: Object,
+        totalPrice: Number
     },
     data() {
         return {
@@ -37,6 +38,12 @@ export default {
         formatPrice(value) {
         let val = (value/1).toFixed(2)
         return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
+        },
+        incremented() {
+            this.$emit('incremented')
+        },
+        decremented() {
+            this.$emit('decremented')
         }
     }
 }

@@ -7,7 +7,7 @@
         </div>
         <div class="grid border-b border-gray-400">
             <div v-for="product in cart" :key="product.id" class="py-4 border-t border-gray-400">
-                <CartCard :product="product" class="locationOption w-full flex py-2 lg:py-2 rounded-sm rounded-b-none text-gray-600 lg:text-lg md:text-base text-13px text-center cursor-pointer" />
+                <CartCard :product="product" :totalPrice="totalPrice" @incremented="calculateTotal(product)" @decremented="decrementTotal(product)" class="locationOption w-full flex py-2 lg:py-2 rounded-sm rounded-b-none text-gray-600 lg:text-lg md:text-base text-13px text-center cursor-pointer" />
             </div>
         </div>
 
@@ -39,7 +39,8 @@ export default {
     },
     props: {
         cart: Array,
-        totalPrice: Number
+        totalPrice: Number,
+        product: Object,
     },
     data() {
         return {
@@ -52,7 +53,15 @@ export default {
         formatPrice(value) {
         let val = (value/1).toFixed(2)
         return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
-        }
+        },
+
+        calculateTotal(item) {
+            this.totalPrice += item.price
+        },
+
+        decrementTotal(item) {
+            this.totalPrice -= item.price
+        },
     },
 }
 </script>
