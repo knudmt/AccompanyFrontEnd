@@ -3,12 +3,14 @@
       <HeroTabs :tabs="['I’m a Passenger', 'I’m a Flight Crew Member']" :selected="selected" @selected="setSelected">
         <Tab :isSelected="selected === 'I’m a Passenger'" >
           <div :class="{ passengerHero: this.selected }">
-            <PassengerHero />
+            <PassengerHero v-if="locationGrab === false"/>
+            <PassLocationSelectedHero v-if="locationGrab === true" />
           </div>
         </Tab>
         <Tab :isSelected="selected === 'I’m a Flight Crew Member'" >
           <div :class="{ crewHero: this.selected }">
-            <CrewHero />
+            <CrewHero v-if="locationGrab === false" />
+            <CrewLocationSelectedHero v-if="locationGrab === true" />
           </div>
         </Tab>
       </HeroTabs> 
@@ -22,6 +24,8 @@ import HeroTabs from './HeroTabs';
 import Tab from './Tab';
 import PassengerHero from './PassengerHero';
 import CrewHero from './CrewHero';
+import PassLocationSelectedHero from './heros/PassengerLocationSelected.vue'
+import CrewLocationSelectedHero from './heros/CrewLocationSelected.vue'
 
 export default {
   name: 'Hero',
@@ -29,12 +33,19 @@ export default {
     HeroTabs,
     Tab,
     PassengerHero,
+    PassLocationSelectedHero,
     CrewHero,
+    CrewLocationSelectedHero,
   },
   data() {
     return {
       selected: 'I’m a Passenger'
     }
+  },
+  props: {
+    selectedLocation: Boolean,
+    locationName: String,
+    locationGrab: Boolean,
   },
   methods: {
     setSelected(tab) {

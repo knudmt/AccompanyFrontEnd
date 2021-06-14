@@ -1,6 +1,6 @@
 <template>
   <div class="container max-w-full">
-    <Hero />
+    <Hero :selectedLocation="selectedLocation" :locationName="locationName"/>
     <DataServices />
     <Partners class="bg-bgBlue" />
     <Contact />
@@ -20,6 +20,10 @@ export default {
     DataServices,
     Partners,
     Contact,
+  },
+  props: {
+    selectedLocation: Boolean,
+    locationName: String,
   }
 }
 </script>

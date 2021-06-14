@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderNav :selectedLocation="selectedLocation" />
     <div id="contentDiv" class="max-w-screen-3xl m-auto">
-        <router-view @updated-location="updateLocation" :locationName="locationName" />
+        <router-view @updated-location="updateLocation" :locationName="locationName" :selectedLocation="selectedLocation" :locationGrab="locationGrab" />
     </div>
     <Footer :selectedLocation="selectedLocation" />
   </div>
@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       selectedLocation: false,
-      locationName : 'Please select a location'
+      locationName : 'Please select a location',
+      locationGrab: false,
     }
   },
   methods: {
