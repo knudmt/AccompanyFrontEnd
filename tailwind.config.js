@@ -92,6 +92,7 @@ module.exports = {
         'cartImage': "url('../images/cartImage.png')",
         'orderNow': "url('../images/orderNow.png')",
         'accompanyLogo': "url('../images/AccompanyHero@2x.png')",
+        'treeBg': "url('../images/treeBg@2x.png')",
        }),
        lineHeight: {
         '15px': '15px',

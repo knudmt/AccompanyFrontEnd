@@ -1,0 +1,33 @@
+<template>
+    <div>
+        <Hero />
+        <Overview />
+        <Impact />
+        <TreeSpecies />
+        <Methodology />
+        <FlightGather />
+        <FlightConfirm />
+    </div>
+</template>
+
+<script>
+import Hero from '../components/heros/TreeHero.vue'
+import Overview from '../components/tree-donation/DonateOverview.vue'
+import Impact from '../components/tree-donation/Impact.vue'
+import TreeSpecies from '../components/tree-donation/TreeSpecies.vue'
+import Methodology from '../components/tree-donation/Methodology.vue'
+import FlightGather from '../components/tree-donation/FlightForm.vue'
+import FlightConfirm from '../components/tree-donation/FlightConfirm.vue'
+
+export default {
+    components: {
+        Hero,
+        Overview,
+        Impact,
+        TreeSpecies,
+        Methodology,
+        FlightGather,
+        FlightConfirm
+    }
+}
+</script>

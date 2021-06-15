@@ -14,7 +14,7 @@ import Partners from '../components/Partners';
 import Contact from '../components/Contact';
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { 
     Hero,
     DataServices,
@@ -30,7 +30,7 @@ export default {
  
 <style>
 #app {
-  font-family:'Helvetica', sans-serif;;
+  font-family:"Helvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
