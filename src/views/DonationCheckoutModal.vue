@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray-500 py-24">
         <div class="w-2/3 bg-white rounded-lg m-auto p-4">
-            <span class="float-right text-xl">X</span>
+            
 
             <div class="flex flex-col w-1/2 m-auto">
                 <img src="../assets/images/donationSuccess.png" alt="Donation Successful">
