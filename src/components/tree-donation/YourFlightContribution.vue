@@ -79,7 +79,8 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="flex flex-col">
+                    <button @click="$router.push('DonateCheckout')" class="lg:ml-6 px-10 py-2 font-bold text-white bg-seafoam mb-4">Continue</button>
                     <button class="lg:ml-6 border-2 border-solid border-darkBlueText px-10 py-1 font-bold text-darkBlueText">Calculate My Flight CO2 Emission</button>
                 </div>
             </div>

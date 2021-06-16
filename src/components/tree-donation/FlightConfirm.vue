@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="mt-10">
-                <button class="border border-solid border-darkBlueText font-bold px-6 py-1 rounded">Back</button>
+                <button @click="$emit('back-clicked')" class="border border-solid border-darkBlueText font-bold px-6 py-1 rounded">Back</button>
                 <button @click="$router.push('DonateCalculate')" class="bg-seafoam font-bold text-white px-6 py-1 rounded ml-6">Continue</button>
             </div>
             
@@ -49,6 +49,6 @@ export default {
             arrivalTime: '10:21 PM',
             aircraft: 'Embraer 175'
         }
-    }
+    },
 }
 </script>

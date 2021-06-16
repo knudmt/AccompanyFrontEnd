@@ -93,6 +93,7 @@ module.exports = {
         'orderNow': "url('../images/orderNow.png')",
         'accompanyLogo': "url('../images/AccompanyHero@2x.png')",
         'treeBg': "url('../images/treeBg@2x.png')",
+        'ghanaImg': "url('../images/donateLocation.png')",
        }),
        lineHeight: {
         '15px': '15px',
