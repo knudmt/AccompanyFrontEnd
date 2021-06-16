@@ -82,6 +82,24 @@ const routes = [
     component: () =>
       import("../views/DonateTrees.vue"),
   },
+  {
+    path: "/DonateCheckout",
+    name: "DonateCheckout",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import("../views/DonateCheckout.vue"),
+  },
+  {
+    path: "/DonateCalculate",
+    name: "DonateCalculate",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import("../views/DonateCalculate.vue"),
+  },
 ];
 
 const router = new VueRouter({

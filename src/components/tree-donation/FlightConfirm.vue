@@ -1,7 +1,7 @@
 <template>
     <div class="bg-bgBlue lg:p-32 lg:pt-12">
         <div class="lg:bg-white rounded-2xl bg-bgBlue py-6 px-8 lg:pb-24 lg:pt-10 lg:px-32 lg:shadow-lg max-w-screen-2xl m-auto">
-            <h4 class="w-full mb-10 text-2xl font-bold text-darkBlueText">Confirm Flight Informartion</h4>
+            <h4 class="w-full mb-10 text-2 xl font-bold text-darkBlueText">Confirm Flight Informartion</h4>
             <div class="flex text-left flex-wrap justify-between">
                 <div class="w-1/3 flex flex-col">
                     <span class="text-lg font-bold">Airline</span>
@@ -30,7 +30,7 @@
             </div>
             <div class="mt-10">
                 <button class="border border-solid border-darkBlueText font-bold px-6 py-1 rounded">Back</button>
-                <button class="bg-seafoam font-bold text-white px-6 py-1 rounded ml-6">Continue</button>
+                <button @click="$router.push('DonateCalculate')" class="bg-seafoam font-bold text-white px-6 py-1 rounded ml-6">Continue</button>
             </div>
             
             

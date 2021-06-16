@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Hero />
+        <Hero :btn="true" :title="title" :text="text" />
         <Overview />
         <Impact />
         <TreeSpecies />
@@ -28,6 +28,12 @@ export default {
         Methodology,
         FlightGather,
         FlightConfirm
-    }
+    },
+    data() {
+        return {
+            title: 'Ready to Donate A Tree?',
+            text: 'Accompany data will plant trees to replace CO2 gas from your flight activity.',
+        }
+    },
 }
 </script>
