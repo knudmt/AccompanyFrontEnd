@@ -1,7 +1,6 @@
 <template>
     <div>
         <Hero :btn="false" :title="title" :text="text" />
-        <DonationInfo />
         <DonationLocationCheckout />
         <DonationCheckoutForm />
     </div>
@@ -9,14 +8,12 @@
 
 <script>
 import Hero from '../components/heros/TreeHero.vue'
-import DonationInfo from '../components/tree-donation/DonationInfo.vue'
 import DonationLocationCheckout from '../components/tree-donation/DonationLocationCheckout.vue'
 import DonationCheckoutForm from '../components/tree-donation/DonationCheckoutForm.vue'
  
 export default {
     components: {
         Hero,
-        DonationInfo,
         DonationLocationCheckout,
         DonationCheckoutForm
     },

@@ -1,6 +1,6 @@
 <template>
     <div class="lg:px-32 pt-12 pb-24 bg-bgBlue">
-        <h4 class="font-bold text-left text-xl mb-6 pl-3 lg:pl-0">Tree Planting Location</h4>
+        <h4 class="font-bold text-darkBlueText text-left text-xl mb-6 pl-3 lg:pl-0">Tree Planting Location</h4>
         <div class="flex  lg:flex-row-reverse flex-col-reverse px-3 lg:px-0">
             <div class="right lg:w-1/2 w-full lg:ml-10 bg-white flex flex-col border border-solid border-gray-300 border-opacity-40 shadow-md">
                 <div class="px-4 py-2 text-sm text-darkBlueText font-bold flex justify-between border-b border-solid border-gray-400 border-opacity-30">

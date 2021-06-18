@@ -19,7 +19,7 @@
                         <p class="pt-1">Full Capacity Regional flight trees planted calculations based off two-hour flight time*</p>
                     </div>
                 </div>
-                <button @click="$router.push('GatherFlightData')" class="bg-seafoam py-2 px-10 border border-solid border-white text-white font-bold rounded mt-4">Donate A Tree</button>
+                <button @click="$router.push('DonateCalculate')" class="bg-seafoam py-2 px-10 border border-solid border-white text-white font-bold rounded mt-4">Donate A Tree</button>
             </div>
             <div class="right lg:w-1/3 lg:ml-10 w-full">
                 <div class="w-96 h-64 m-auto bg-gray-300"></div>
