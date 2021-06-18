@@ -69,7 +69,6 @@ export default {
         
         calculateTotal(item) {
             this.totalPrice += item.price
-            console.log('item', item)
         },
         addToCart(product) {
             if(this.cart.includes(product)){
