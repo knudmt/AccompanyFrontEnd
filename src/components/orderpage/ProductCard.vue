@@ -1,7 +1,6 @@
 <template>
     <div class="flex flex-col flex-wrap justify-center items-center w-1/3 px-12">
-        <!-- <img :src="require(`../../assets/images/` + backgroundImg)" :alt="product.id"> -->
-        <div class="w-full h-40 bg-white border border-solid"></div>
+        <img :src="require(`../../assets/images/` + backgroundImg)" :alt="product.id"> 
         <h5 class="font-bold text-lg mt-2">{{ product.title }}</h5>
         <p class="text-15px text-gray-500 ">{{ product.short }}</p>
         <p class="text-15px text-gray-500 px-8">{{ product.long }}</p>
@@ -21,11 +20,11 @@ export default {
     props: {
         product: Object
     },
-    // data() {
-    //     return {
-    //         backgroundImg: this.product.image,
-    //     }
-    // },
+    data() {
+        return {
+            backgroundImg: this.product.image,
+        }
+    },
     methods: {
         formatPrice(value) {
         let val = (value/1).toFixed(2)
