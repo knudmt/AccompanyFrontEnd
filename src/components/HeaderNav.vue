@@ -16,7 +16,7 @@
                     </div>
                 </nav>
             </div>
-            <button class=" w-6 h-6 flex md:hidden flex-wrap items-center float-right mr-8 my-2" @click="toggle">
+            <button class=" w-6 h-6 flex md:hidden flex-wrap items-center float-right mr-8 my-2" @click="toggle()">
                 <span class="top block h-3px w-full rounded-xl bg-darkBlueText"></span>
                 <span class="mid block h-3px w-full rounded-xl bg-darkBlueText"></span>
                 <span class="btm block h-3px w-full rounded-xl bg-darkBlueText"></span>
@@ -37,7 +37,9 @@ export default {
         selectedLocation: Boolean
     },
     methods: {
-        
+        toggle() {
+            this.isOpen = !this.isOpen
+        },
         orderNowPush() {
             if(this.selectedLocation) {
                 this.$router.push('OrderResturantPicker')

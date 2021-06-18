@@ -13,7 +13,7 @@
             </div>
             <div class="flex flex-wrap section-wrapper">
                 <div v-if="!hideMenu" class="flex flex-wrap section-wrapper">
-                    <div v-for="product in menu" :key="product" v-show="!viewCart" :class="{ sectionTitle: product.section }" class="flex flex-col w-full lg:mb-0 mb-6 lg:w-1/3">
+                    <div v-for="product in menu" :key="product.id" v-show="!viewCart" :class="{ sectionTitle: product.section }" class="flex flex-col w-full lg:mb-0 mb-6 lg:w-1/3">
                         <div v-if="product.section" class="text-left w-full text-darkBlueText lg:text-xl font-bold">{{ product.section }}</div>
                         <ProductCard @add-cart="addToCart(product)" :product="product" class="locationOption w-full flex py-2 px-6 lg:py-2 rounded-sm rounded-b-none text-gray-600 lg:text-lg md:text-base text-13px text-center cursor-pointer" />
                     </div>

@@ -48,7 +48,7 @@
             </div>
             <div class="flex flex-col lg:w-1/2 text-left mb-8 lg:mb-0">
                 <div class="bg-ghanaImg bg-no-repeat bg-center bg-cover">
-                    <div class="bg-overlayGray h-64 flex items-center justify-center">
+                    <div class="bg-overlayGray h-64 flex items-center min-h-320px justify-center">
                         <h4 class="top-1/2 left-1/2 text-white translate-x-1/2 translate-y-1/2 text-4xl">GHANA<br>AFRICA</h4>
                     </div>
                 </div>
