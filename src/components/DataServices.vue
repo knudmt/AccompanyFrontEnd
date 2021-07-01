@@ -7,8 +7,8 @@
             </div>
             <div class="data-card-wrapper flex-col md:flex md:flex-row justify-between px-6 md:px-0 items-center m-auto min-h-64">
                 <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md flex-col justify-center m-auto border-solid border-2 py-8 px-4 mb-4 md:mb-0">
-                    <img src="../assets/images/icon-wallet.png" alt="" class="img-replace w-2/5 m-auto mb-4"> 
-                    <p class="text-13px md:text-xl">Save money by reporting your height & weight to airlines quicker!</p>
+                    <img src="../assets/images/InfoIcon.png" alt="" class="img-replace w-2/5 m-auto mb-4"> 
+                    <p class="text-13px md:text-xl">Report your carry on information to help airlines save on fuel and CO2 gases.</p>
                 </div>
                 <div class="data-card w-full md:w-80 md:h-80 shadow-md rounded-md m-auto flex-col md:mx-6 justify-center border-solid border-2 py-8 px-4 mb-4 md:mb-0">
                     <img src="../assets/images/icon-medicine.png" alt="" class="img-replace w-2/5 m-auto mb-4">
