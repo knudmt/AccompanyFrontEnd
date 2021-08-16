@@ -1,7 +1,7 @@
 <template>
   <div class="container max-w-full">
-    <Hero :selectedLocation="selectedLocation" :locationName="locationName"/>
-    <DataServices />
+    <Hero :selectedLocation="selectedLocation" :locationName="locationName" @selected="setTab"/>
+    <DataServices :selectedTab="selectedTab" />
     <Partners class="bg-bgBlue" />
     <Contact />
   </div>
@@ -21,9 +21,20 @@ export default {
     Partners,
     Contact,
   },
+  data() {
+    return {
+      selectedTab: "I'm a Passenger"
+    }
+  },
   props: {
     selectedLocation: Boolean,
     locationName: String,
+  },
+  methods: {
+    setTab(tab) {
+      this.selectedTab = tab;
+      console.log(tab)
+    }
   }
 }
 </script>
