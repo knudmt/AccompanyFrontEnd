@@ -30,6 +30,9 @@ export default {
     selectedLocation: Boolean,
     locationName: String,
   },
+  created() {
+    console.log(this.selectedTab)
+  },
   methods: {
     setTab(tab) {
       this.selectedTab = tab;
