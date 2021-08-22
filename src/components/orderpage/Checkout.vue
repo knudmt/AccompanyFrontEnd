@@ -83,7 +83,6 @@
 
 <script>
 import ProductList from "./ProductList";
-import AppItems from "../../js/appItems";
 import User from "../../js/appUser";
 import AppDelivery from "../../js/AppDelivery";
 import SwiftOrder from "../../js/switfOrder";
