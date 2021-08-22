@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default class AppItems
 {
     constructor(description, price, quantity){

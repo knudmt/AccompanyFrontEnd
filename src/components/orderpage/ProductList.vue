@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div>
         <span v-if="!hideMenu">
