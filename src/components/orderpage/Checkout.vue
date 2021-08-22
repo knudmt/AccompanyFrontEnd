@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
     <div>
         <div class="apply-wrapper bg-bgBlue lg:p-32 lg:pt-12">
