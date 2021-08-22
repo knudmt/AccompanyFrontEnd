@@ -43,60 +43,206 @@
                             min="00:00" max="23:59" required>
                     </div>
                 </div>
-                <div>
-                    <h4 class="paymentMethod text-xl text-darkBlueText text-center mt-12 font-bold">Payment Method</h4>    
-                    <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-1/2 pl-2 lg:pl-12">
-                        <label for="CardInfo">Your Card Information</label>
-                        <input v-model="cardNum" id="cardInfo" name="CardInfo" type="number" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required />
-                    </div>
-                    <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-1/2 pl-2 lg:pl-12">
-                        <label for="CardName">Full Name on Card</label>
-                        <input v-model="fullNameOnCard" id="cardName" name="CardName" type="text" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required />
-                    </div>
-                    <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-1/2 pl-2 lg:pl-12">
-                        <label for="CVV">CVV</label>
-                        <input v-model="cvv" id="cvv" name="CVV" type="number" maxlength="3" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required />
-                    </div>
-                    <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-1/2 pl-2 lg:pl-12">
-                        <label for="ExpDate">Exp. Date</label>
-                        <input v-model="expDate" type="number" id="expDate" name="ExpDate" maxlength="4" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required>
-                    </div>
-                </div>
-                <div class="w-full flex justify-center">
-                    <input @click="processForm" :value="'Pay $' + grandTotal" class="py-2 px-8 bg-seafoam rounded-md text-white text-lg font-bold">
-                </div>
+                <!-- stripe div -->
                 
+                <section class="row payment-form">
+                    <h5 class="#e0e0e0 grey lighten-4">
+                        Payment Method
+                        <span class="right">${{ formatPrice(totalPrice) }}</span>
+                    </h5>
+
+                    <div class="error red center-align white-text"> {{stripeValidationError}}</div>
+
+                        <div class="col s12 card-element">
+                            <label>Card Number</label>
+                            <div id="card-number-element" class="input-value"></div>
+                        </div>
+
+                    <div class="col s6 card-element">
+                        <label>Expiry Date</label>
+                        <div id="card-expiry-element"></div>
+                    </div>
+
+                    <div class="col s6 card-element">
+                        <label>CVC</label>
+                        <div id="card-cvc-element"></div>
+                    </div>
+
+                    <div class="col s12 place-order-button-block">
+                        <button class="btn col s12 #e91e63 pink" @click="placeOrderButtonPressed">Place Order</button>
+                    </div>
+                </section>
+               
+            
             </form>
         </div>
     </div>
     </div>
 </template>
 
+
 <script>
+import ProductList from "./ProductList";
+import AppItems from "../../js/appItems";
+import User from "../../js/appUser";
+import AppDelivery from "../../js/AppDelivery";
+import SwiftOrder from "../../js/switfOrder";
+
 export default {
     name: 'Checkout',
-    data: () => ({ 
-        value: 3.50,
-        grandTotal: '0.00',
-        firstName: '',
-        lastName: '',
-        phone: 8000000000,
-        email: '',
-        Terminal: '',
-        Gate: '',
-        tip: 0.00,
-        date: '',
-        time: '',
-        cardNum: '',
-        fullNameOnCard: '',
-        CVV: '',
-        expDate: '',
+    components: {
+        ProductList,
+    },
+    props: {
+        cart: Array,
+        totalPrice: Number,
+    },
+    data(){
+        return {
+            cart: [],
+            viewCart: true,
+            stripe: null,
+            cardNumberElement:null,
+            cardExpiryElement:null,
+            cardCVCElement:null,
+            stripeValidationError:null,
+            firstName:'',
+            lastName:'',
+            phone:'',
+            email:'',
+            terminal:'',
+            gate:'',
+            tip:'',
+            amount:0,
+        }
+        
+    },
+    mounted(){
+        this.stripe = new Stripe("pk_live_ZdmJdFuypvWwlbKrAbqW0XcQ005uK2dFUU");
+        this.init();
+    },
+    methods: 
+    {
+        init(){
+            // invoke and mount
+            var elements = this.stripe.elements();
 
-    }),
-    methods: {
-        processForm() {
-           console.log(this.firstName, this.lastName); 
+            this.cardNumberElement = elements.create("cardNumber");
+            this.cardNumberElement.mount("#card-number-element");
+
+            this.cardExpiryElement = elements.create("cardExpiry");
+            this.cardExpiryElement.mount("#card-expiry-element");
+
+            this.cardCVCElement = elements.create("cardCvc");
+            this.cardCVCElement.mount("#card-cvc-element");
+            
+            // change events
+            this.cardNumberElement.on("change", this.setValidationError);
+            this.cardExpiryElement.on("change", this.setValidationError);
+            this.cardCVCElement.on("change", this.setValidationError);
+        },
+
+        setValidationError(event)
+        {
+            this.stripeValidationError = event.error ? event.error.message : "";
+        },
+
+        formatPrice(value) 
+        {
+            let val = (value/1).toFixed(2)
+            return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
+        },
+
+        async processToken(data){
+            const response = await fetch('https://accompanypayments.azurewebsites.net/api/payment', {
+                method: 'POST',
+                headers: {
+                    'Accept':'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify(data)
+            });
+            const content = await response;
+            console.log(content);
+
+            if(content[2] === "True")
+            {
+                console.log(this.totalPrice * 100);
+                var appDelivery = this.buildOrder();
+                this.sendOrder(appDelivery);
+            }
+        },
+        sendOrder(appDelivery)
+        {
+            try
+            {
+                var swift = new SwiftOrder(appDelivery);
+                var submitted = swift.submitOrder();
+            }
+            catch(error)
+            {
+                console.log("[ERROR]: " + error.message);
+                alert(error);
+            }
+        },
+        getVendorName(id){
+            switch(id)
+            {
+                case "11":
+                    return "Chick-fil-A";
+                case "6":
+                    return "Pei Wei Asian Kitchen";
+                case "7":
+                    return "PDQ Chicken";
+                case "8":
+                    return "Starbucks";
+                case "9":
+                    return "Qdoba Mexican";
+                case "10":
+                    return "Wendy's";
+            }
+        },
+        buildOrder()
+        {
+            var items = [];
+            for(var i = 0; i < this.cart.length; i++)
+            {
+                var obj = 
+                {
+                    description : this.cart[i].title,
+                    price : parseFloat(this.cart[i].price),
+                    quanity : 1
+                };
+                items.push(obj);
+            }
+            var user = this.firstName + " " + this.lastName;
+            var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
+            var vendorId = window.localStorage.getItem('vendorId');
+            
+            return new AppDelivery(appUsr, 
+                                   items, 
+                                   "delivery", 
+                                   this.getVendorName(vendorId), 
+                                   this.totalPrice * 100);
+
+        },
+        placeOrderButtonPressed()
+        {
+            
+            this.stripe.createToken(this.cardNumberElement).then(result => {
+                if(result.error){
+                    this.stripeValidationError = result.error.message;
+                } 
+                else {
+                    var json = {
+                        amount: this.amount,
+                        source: result.token.id
+                    }
+                    this.processToken(json);
+                }
+            });
         }
     }
-}
+};
+
 </script>

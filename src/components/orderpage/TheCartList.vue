@@ -62,6 +62,9 @@ export default {
         decrementTotal(item) {
             this.totalPrice -= item.price
         },
+        printCart(){
+            console.log("CART: " + this.cart);
+        }
     },
 }
 </script>

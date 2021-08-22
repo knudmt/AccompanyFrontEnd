@@ -1,0 +1,23 @@
+.payment-form {
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ececec;
+}
+.payment-form h5 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.card-element {
+    margin-top: 5px;
+}
+#card-number-element,
+#card-expiry-element,
+#card-cvc-element {
+    background: white;
+    padding: 5px;
+    border: 1px solid #ececec;
+}
+.place-order-button-block {
+    margin: 10px 0;
+}

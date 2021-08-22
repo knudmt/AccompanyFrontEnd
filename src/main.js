@@ -3,6 +3,7 @@ import VueCurrencyInput from 'vue-currency-input'
 import App from "./App.vue";
 import router from "./router";
 import "./assets/css/index.css";
+import "./assets/css/payment-card.css";
 
 Vue.config.productionTip = false;
 Vue.use(VueCurrencyInput, pluginOptions)
