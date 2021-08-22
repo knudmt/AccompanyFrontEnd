@@ -72,7 +72,7 @@
                         <button class="btn col s12 #e91e63 pink" @click="placeOrderButtonPressed">Place Order</button>
                     </div>
                 </section>
-               
+               <ProductList />
             
             </form>
         </div>
