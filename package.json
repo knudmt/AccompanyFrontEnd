@@ -9,6 +9,7 @@
     "backend": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "@vue-stripe/vue-stripe": "^4.2.5",
     "core-js": "^3.6.5",
     "json-server": "^0.16.3",
     "vue": "^2.6.11",

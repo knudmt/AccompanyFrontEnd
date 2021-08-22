@@ -113,6 +113,7 @@ export default {
             
             var i;
             const arr = [];
+            const regex = /[^0-9.-]+/g;
             // id, title, short, long
             for(i = 0; i < items.length; i++){
                 var json = {};
@@ -123,7 +124,7 @@ export default {
                 json["long"] = "longer description";
         
                 var currency = items[i].subItems[0].price;
-                var price = Number(currency.replace(/[^0-9\.-]+/g, ""));
+                var price = Number(currency.replace(regex, ""));
                 json["price"] = price; 
                 json["image"] = "Square2.png";
 
