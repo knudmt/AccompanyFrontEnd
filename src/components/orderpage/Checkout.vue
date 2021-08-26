@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 <template>
     <div>
         <div class="apply-wrapper bg-bgBlue lg:p-32 lg:pt-12">
@@ -82,6 +82,7 @@
 
 
 <script>
+/* eslint-disable */
 import ProductList from "./ProductList";
 import User from "../../js/appUser";
 import AppDelivery from "../../js/AppDelivery";
