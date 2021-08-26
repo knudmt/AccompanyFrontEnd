@@ -93,7 +93,7 @@ export default {
         ProductList,
     },
     props: {
-        cart: Array,
+        cartObj: Array,
         totalPrice: Number,
     },
     data(){
@@ -204,12 +204,12 @@ export default {
         buildOrder()
         {
             var items = [];
-            for(var i = 0; i < this.cart.length; i++)
+            for(var i = 0; i < this.cartObj.length; i++)
             {
                 var obj = 
                 {
-                    description : this.cart[i].title,
-                    price : parseFloat(this.cart[i].price),
+                    description : this.cartObj[i].title,
+                    price : parseFloat(this.cartObj[i].price),
                     quanity : 1
                 };
                 items.push(obj);
