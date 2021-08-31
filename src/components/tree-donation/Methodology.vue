@@ -2,8 +2,8 @@
     <div class="bg-bgBlue">
         <div class="w-5/6 m-auto flex flex-col-reverse lg:flex-row-reverse justify-between lg:text-left py-16">
             <div class="left lg:w-1/2">
-                <h4 class="text-xl text-darkBlueText font-bold mb-4 mt-6 lg:mt-0">Methodology</h4>
-                <p class="mb-6">
+                <h4 class="text-xl md:text-2xl text-darkBlueText font-bold mb-4 mt-6 lg:mt-0">Methodology</h4>
+                <p class="mb-6 md:text-lg">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                 </p>
                
