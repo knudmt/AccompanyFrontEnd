@@ -2,7 +2,7 @@
     <div class="wrapper w-full">
         <div class="w-5/6 m-auto flex flex-col-reverse lg:flex-row justify-between lg:text-left py-16">
             <div class="left pt-10 lg:w-1/2">
-                <h4 class="text-xl md:text-2xl text-darkBlueText font-bold mb-4 mt-6 lg:mt-0"></h4>
+                <h4 class="text-xl md:text-2xl text-darkBlueText font-bold mb-4 mt-6 lg:mt-0">Reduce Your Waste</h4>
                 <p class="mb-6 text-left text-xl md:text-lg">
                     Planting trees remains one of the best ways to reduce global carbon emissions 
                     <br> <br>
