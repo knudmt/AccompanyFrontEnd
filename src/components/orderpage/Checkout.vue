@@ -236,6 +236,7 @@ export default {
             this.stripe.createToken(this.cardNumberElement).then(result => {
                 if(result.error){
                     this.stripeValidationError = result.error.message;
+                    alert("stripe error: " + result.error);
                 } 
                 else {
                     var json = {
