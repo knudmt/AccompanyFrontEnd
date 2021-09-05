@@ -82,6 +82,8 @@
 
 
 <script>
+/* eslint-disable */
+
 import ProductList from "./ProductList";
 import User from "../../js/appUser";
 import AppDelivery from "../../js/AppDelivery";
@@ -170,6 +172,10 @@ export default {
                 var appDelivery = this.buildOrder();
                 this.sendOrder(appDelivery);
             }
+            else
+            {
+                alert("ERROR Processing your card :(");
+            }
         },
         sendOrder(appDelivery)
         {
@@ -227,7 +233,6 @@ export default {
         },
         placeOrderButtonPressed()
         {
-            
             this.stripe.createToken(this.cardNumberElement).then(result => {
                 if(result.error){
                     this.stripeValidationError = result.error.message;
