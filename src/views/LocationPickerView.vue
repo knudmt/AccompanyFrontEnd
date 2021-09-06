@@ -23,6 +23,8 @@ export default {
   },
   methods: {
     updateLocation(option) {
+      console.log("LOCATION CHOSEN: " + option.id);
+      
       this.$emit('updated-location', option);
     }
   }

@@ -5,6 +5,8 @@ import router from "./router";
 import "./assets/css/index.css";
 import "./assets/css/payment-card.css";
 
+console.log(Vue.version);
+
 Vue.config.productionTip = false;
 Vue.use(VueCurrencyInput, pluginOptions)
 

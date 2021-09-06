@@ -4,8 +4,6 @@
         <div v-else>
             
             <ProductList :locationName="locationName" :selectedVendor="selectedVendor" :menu="menu"/>
-          
-
 
         </div>
         
@@ -90,9 +88,26 @@ export default {
             }
         },
 
+        getLocation: function(){
+            console.log("Getting Location...");
+            console.log("Location Name: " + this.locationName);
+            if(this.locationName.includes('Atlanta')){
+                return 'Atlanta';
+            }
+            else if(this.locationName.includes('Orleans')){
+                return 'New Orleans';
+            }
+            else {
+                return 'Nashville';
+            }
+        },
+
         async fetchVendors(){
-            // add .then() for success and failure processing. MK
-            const res = await fetch('https://accompanyconcessions.azurewebsites.net/api/restaurants?city=Tampa')
+
+            const locale = this.getLocation();
+            console.log("Fetching vendors with locale of: " + locale);
+
+            const res = await fetch('https://accompanyconcessions.azurewebsites.net/api/restaurants?city=' + locale);
             const data = await res.json();
             
             var concessions = JSON.parse(data);
