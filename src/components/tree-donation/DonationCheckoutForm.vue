@@ -30,26 +30,33 @@
                             <p class="italic text-gray-400 text-sm mt-2">Please reference the tree pricing above to determine the appropriate donation amount based on your flight’s information.</p>
                         </div>
                     </div>
+                    <!-- Stripe Section -->
+                    <section class="row payment-form">
+                        <h5 class="#e0e0e0 grey lighten-4">
+                            Payment Method
+                        </h5>
 
-                    <div class="w-full lg:w-1/2">
-                        <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-full pl-2 lg:pl-12">
-                            <label for="CardInfo">Your Card Information</label>
-                            <input v-model="cardNum" id="cardInfo" name="CardInfo" type="number" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required />
-                        </div>
-                        <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-full pl-2 lg:pl-12">
-                            <label for="CardName">Full Name on Card</label>
-                            <input v-model="fullNameOnCard" id="cardName" name="CardName" type="text" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required />
-                        </div>
-                        <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-1/2 pl-2 lg:pl-12">
-                            <label for="CVV">CVV</label>
-                            <input v-model="cvv" id="cvv" name="CVV" type="number" maxlength="3" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required />
-                        </div>
-                            <div class="mb-8 lg:mb-4 inline-block text-left text-lg lg:text-xl w-1/2 pl-2 lg:pl-12">
-                                <label for="ExpDate">Exp. Date</label>
-                                <input v-model="expDate" type="number" id="expDate" name="ExpDate" maxlength="4" class="mt-2 h-8 lg:h-10 lg:mt-1 text-sm appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 mb-3 leading-tight" required>
+                        <div class="error red center-align white-text"> {{stripeValidationError}}</div>
+
+                            <div class="col s12 card-element">
+                                <label>Card Number</label>
+                                <div id="card-number-element" class="input-value"></div>
                             </div>
-                            <button @click="$router.push('DonationCheckoutModal')" class="px-10 rounded float-right py-2 text-lg bg-seafoam text-white font-bold mt-4">Donate {{amount}}</button>
-                    </div>
+
+                        <div class="col s6 card-element">
+                            <label>Expiry Date</label>
+                            <div id="card-expiry-element"></div>
+                        </div>
+
+                        <div class="col s6 card-element">
+                            <label>CVC</label>
+                            <div id="card-cvc-element"></div>
+                        </div>
+
+                        <div class="col s12 place-order-button-block">
+                            <button class="btn col s12 #e91e63 pink" @click="processPayment">Donate Now</button>
+                        </div>
+                    </section>
 
                     
                 </div> 
@@ -62,11 +69,94 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
     data() {
         return {
-            amount: '$0.00'
+            amount: '$0.00',
+            stripe:null,
+            stripeValidationError: null,
+            cardNumberElement:null,
+            cardExpiryElement:null,
+            cardCVCElement:null,
+            firstName:'',
+            lastName:'',
+            phone:'',
+            email:''
         }
+    },
+
+     mounted(){
+        this.stripe = new Stripe("pk_live_ZdmJdFuypvWwlbKrAbqW0XcQ005uK2dFUU");
+        this.init();
+    },
+
+    methods: {
+
+        init()
+        {
+            var elements = this.stripe.elements();
+
+            this.cardNumberElement = elements.create("cardNumber");
+            this.cardNumberElement.mount("#card-number-element");
+            this.cardExpiryElement = elements.create("cardExpiry");
+            this.cardExpiryElement.mount("#card-expiry-element");
+            this.cardCVCElement = elements.create("cardCvc");
+            this.cardCVCElement.mount("#card-cvc-element");
+            
+            // change events
+            this.cardNumberElement.on("change", this.setValidationError);
+            this.cardExpiryElement.on("change", this.setValidationError);
+            this.cardCVCElement.on("change", this.setValidationError);
+            
+        },
+        getToken()
+        {
+            console.log("GET TOKEN CALLED");
+            
+            this.stripe.createToken(this.cardNumberElement).then(result => {
+                if(result.error){
+                    console.log('ERROR: ' + result.error);
+                }
+                else
+                {
+                    console.log('TOKEN RECEIVED: ' + result.token.id);
+                    this.processPayment(result.token.id);
+                }
+            });
+        },
+        processPayment(token)
+        {
+            var totalCents = parseFloat(this.amount) * 100;
+            var json = { token : token, amount: totalCents };
+
+            fetch('https://accompanypayments.azurewebsites.net/api/payment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept':'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify(json)
+            })
+            .then(function(response){
+                console.log('RESPONSE FROM API: ' + response);
+                if(response[2] == "True")
+                {
+                    alert("Donation Sent!");
+                    window.open("../thankyou.html", "_self");
+                }
+            })
+            .catch(function(err){
+                console.log('ERROR: ' + err);
+            });
+        },
+
+        formatPrice(value) 
+        {
+            let val = (value/1).toFixed(2)
+            return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
+        },
     }
 }
 </script>

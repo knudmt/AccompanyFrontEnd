@@ -122,8 +122,11 @@ export default {
         this.init();
     },
     methods: {
-
-        init(){
+        /*
+            Initialize the stripe elements
+        */
+        init()
+        {
             var elements = this.stripe.elements();
 
             this.cardNumberElement = elements.create("cardNumber");
@@ -139,7 +142,9 @@ export default {
             this.cardCVCElement.on("change", this.setValidationError);
             
         },
-        // get token should be called on submit of payment
+        /*
+            Retrieve token from Stripe
+        */
         getToken()
         {
             console.log("GET TOKEN CALLED");
@@ -156,34 +161,45 @@ export default {
             });
             
         },
-
+        /*
+            Build the order for processings
+        */
         buildOrder()
         {
-            var items = [];
-            for(var i = 0; i < this.cartObj.length; i++)
+            if(this.firstName == "" || this.lastName == "" || this.email == "" || this.phone == "" || this.terminal == "" || this.gate == "")
             {
-                var obj = 
-                {
-                    description : this.cartObj[i].title,
-                    price: parseFloat(this.cartObj[i].price),
-                    quantity : 1
-                };
-                items.push(obj);
+                alert("You may have left some required fields empty.");
+                throw "Form items not completed";
             }
-            //TODO: make a method to verify form input
-            var user = this.firstName + " " + this.lastName;
-            var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
-            var vendorId = window.localStorage.getItem('vendorId');
-            var total = this.totalPrice + parseFloat(this.tip);
+            else
+            {
+                var items = [];
+                for(var i = 0; i < this.cartObj.length; i++)
+                {
+                    var obj = 
+                    {
+                        description : this.cartObj[i].title,
+                        price: parseFloat(this.cartObj[i].price),
+                        quantity : 1
+                    };
+                    items.push(obj);
+            }
+                var user = this.firstName + " " + this.lastName;
+                var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
+                var vendorId = window.localStorage.getItem('vendorId');
+                var total = this.totalPrice + parseFloat(this.tip);
 
-            return new AppDelivery(appUsr,
+                return new AppDelivery(appUsr,
                                    items, 
                                    "delivery",
                                    this.getVendorName(vendorId),
                                    total); // total price + tip
-            /* build order code */
+            }
         },
-
+        
+        /*
+            Begin processing the token
+        */
         processPayment(token)
         {
             var totalCents = (this.totalPrice + parseFloat(this.tip)) * 100;
@@ -213,6 +229,9 @@ export default {
             });
         },
 
+        /*
+            Send order to our API
+        */
         sendOrder(appDelivery)
         {
             try
