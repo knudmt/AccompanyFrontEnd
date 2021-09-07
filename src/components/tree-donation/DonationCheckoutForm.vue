@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="col s12 place-order-button-block">
-                            <button class="btn col s12 #e91e63 pink" @click="processPayment">Donate Now</button>
+                            <button class="btn col s12 #e91e63 pink" @click="getToken">Donate Now</button>
                         </div>
                     </section>
 
@@ -140,11 +140,15 @@ export default {
                 body: JSON.stringify(json)
             })
             .then(function(response){
-                console.log('RESPONSE FROM API: ' + response);
-                if(response[2] == "True")
+                console.log('RESPONSE FROM API: ' + response[2]);
+                if(response[2] === "True")
                 {
                     alert("Donation Sent!");
-                    window.open("../thankyou.html", "_self");
+                    window.open("../orderpage/thankyou.html", "_self");
+                }
+                else if(response.status === 200){
+                    alert("Donation Sent!");
+                    window.open("../orderpage/thankyou.html", "_self")
                 }
             })
             .catch(function(err){

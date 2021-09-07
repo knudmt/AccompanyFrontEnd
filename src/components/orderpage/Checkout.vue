@@ -87,7 +87,6 @@ import User from "../../js/appUser";
 import AppDelivery from "../../js/AppDelivery";
 import SwiftOrder from "../../js/switfOrder";
 
-
 export default {
     name: 'Checkout',
     components: {
@@ -218,7 +217,7 @@ export default {
             })
             .then(function(response){
                 console.log('RESPONSE FROM API: ' + response);
-                if(response[2] == "True")
+                if(response.status === 200)
                 {
                     var appDev = this.buildOrder();  // payment is successful, therefore build order and submit
                     this.sendOrder(appDev);
@@ -239,7 +238,8 @@ export default {
                 var swift = new SwiftOrder(appDelivery);
                 var submitted = swift.submitOrder();
                 // go to success page!
-                window.open("./thankyou.html", "_self");
+                alert("Order Submitted! You can close this page");
+                window.open("../thankyou.html", "_self");
             }
             catch(error)
             {
