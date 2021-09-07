@@ -70,6 +70,7 @@
 
 <script>
 /* eslint-disable */
+
 export default {
     data() {
         return {
@@ -92,7 +93,7 @@ export default {
     },
 
     methods: {
-
+        
         init()
         {
             var elements = this.stripe.elements();
@@ -140,13 +141,8 @@ export default {
                 body: JSON.stringify(json)
             })
             .then(function(response){
-                console.log('RESPONSE FROM API: ' + response[2]);
-                if(response[2] === "True")
-                {
-                    alert("Donation Sent!");
-                    window.open("../orderpage/thankyou.html", "_self");
-                }
-                else if(response.status === 200){
+                if(response.status === 200){
+                    
                     alert("Donation Sent!");
                     window.open("../orderpage/thankyou.html", "_self")
                 }
