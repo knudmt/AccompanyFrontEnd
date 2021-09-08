@@ -149,8 +149,7 @@ export default {
             .then(function(response){
                 if(response.status === 200){
                     
-                    alert("Donation Sent!");
-                    //this.$router.push("https://zealous-tree-0912af910.azurestaticapps.net/thankyou.html");
+                    this.$router.push({path: 'DonationCheckoutModal'});
                 }
             })
             .catch(function(err){
