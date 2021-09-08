@@ -128,6 +128,12 @@ export default {
         },
         processPayment(token)
         {
+            // if '$' is present remove the dollar sign and then parse
+            if(this.amount.includes('$')){
+                console.log("CONTAINS '$' " + this.amount);
+                this.amount = this.amount.replace(/\$/g, '');
+                console.log("AFTER PARSING: " + this.amount);
+            }
             var totalCents = parseFloat(this.amount) * 100;
             var json = { token : token, amount: totalCents };
 
