@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="col s12 place-order-button-block">
-                            <button class="btn col s12 #e91e63 pink" @click="getToken">Donate Now</button>
+                            <button class="btn col s12 #e91e63 pink" @click="pushIt">Donate Now</button>
                         </div>
                     </section>
 
@@ -150,7 +150,7 @@ export default {
                 if(response.status === 200){
                     
                     alert("Donation Sent!");
-                    window.open("https://zealous-tree-0912af910.azurestaticapps.net/thankyou.html", "_self");
+                    this.$router.push("https://zealous-tree-0912af910.azurestaticapps.net/thankyou.html");
                 }
             })
             .catch(function(err){

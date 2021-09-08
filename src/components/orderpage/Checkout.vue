@@ -239,7 +239,7 @@ export default {
                 var submitted = swift.submitOrder();
                 // go to success page!
                 alert("Order Submitted! You can close this page");
-                window.open("https://zealous-tree-0912af910.azurestaticapps.net/thankyou.html", "_self");
+                this.$router.push("https://zealous-tree-0912af910.azurestaticapps.net/thankyou.html");
             }
             catch(error)
             {
