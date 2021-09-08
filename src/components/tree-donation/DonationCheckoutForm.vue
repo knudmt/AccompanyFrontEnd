@@ -26,7 +26,7 @@
                     <div class="w-full lg:w-1/2">
                         <div class="mb-8 lg:mb-4 text-left text-lg lg:text-xl lg:w-full lg:pr-12">
                             <label for="Amount">Amount</label>
-                            <input v-model="amount" class="mt-2 h-8 lg:h-10 lg:mt-1 appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 text-sm leading-tight" placeholder="$0.00" id="amountDonate" type="email" name="Amount" required>
+                            <input v-model="amount" class="mt-2 h-8 lg:h-10 lg:mt-1 appearance-none rounded border border-black w-full py-3 px-3 text-gray-700 text-sm leading-tight" placeholder="$0.00" id="amountDonate" type="text" name="Amount" required>
                             <p class="italic text-gray-400 text-sm mt-2">Please reference the tree pricing above to determine the appropriate donation amount based on your flight’s information.</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="col s12 place-order-button-block">
-                            <button class="btn col s12 #e91e63 pink" @click="pushIt">Donate Now</button>
+                            <button class="btn col s12 #e91e63 pink" @click="getToken">Donate Now</button>
                         </div>
                     </section>
 
