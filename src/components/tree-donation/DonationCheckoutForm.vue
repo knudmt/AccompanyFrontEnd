@@ -150,7 +150,7 @@ export default {
                 if(response.status === 200){
                     
                     alert("Donation Sent!");
-                    window.open("../orderpage/thankyou.html", "_self")
+                    window.open("https://zealous-tree-0912af910.azurestaticapps.net/thankyou.html", "_self");
                 }
             })
             .catch(function(err){
