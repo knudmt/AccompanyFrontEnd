@@ -150,9 +150,9 @@ export default {
                 },
                 body: JSON.stringify(json)
             })
-            .then(function(response){
+            .then(response => {
                 if(response.status === 200){
-                    this.pushIt();
+                    this.$router.push('DonationCheckoutModal')
                 }
             })
             .catch(function(err){
@@ -165,25 +165,6 @@ export default {
             let val = (value/1).toFixed(2)
             return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
         },
-
-        pushIt(){
-            try{
-                console.log('trying this.$router');
-                this.$router.push('DonationCheckoutModal');
-            }
-            catch(error){
-                console.log('ERROR: ' + error);
-            }
-            
-            try{
-                var self = this;
-                self.$router.push('DonationCheckoutModal');
-            }
-            catch(error){
-                console.log('error: ' + error);
-            }
-            
-        }
     }
 }
 </script>
