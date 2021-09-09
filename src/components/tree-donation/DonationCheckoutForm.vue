@@ -140,8 +140,7 @@ export default {
 
             var totalCents = parseFloat(this.amount) * 100;
             var json = { token : token, amount: totalCents };
-            var self = this;
-
+            
             fetch('https://accompanypayments.azurewebsites.net/api/payment', {
                 method: 'POST',
                 headers: {
@@ -153,10 +152,7 @@ export default {
             })
             .then(function(response){
                 if(response.status === 200){
-                    console.log('this.$router: ' + this.$router);
-                    console.log('$router: ' + $router);
-                    console.log('$self: ' + self.$router);
-                    this.$router.push('DonationCheckoutModal');
+                    pushIt();
                 }
             })
             .catch(function(err){
@@ -169,6 +165,33 @@ export default {
             let val = (value/1).toFixed(2)
             return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
         },
+
+        pushIt(){
+            try{
+                console.log('trying this.$router');
+                this.$router.push('DonationCheckoutModal');
+            }
+            catch(error){
+                console.log('ERROR: ' + error);
+            }
+            
+            try{
+                console.log('trying $router');
+                $router.push('DonationCheckoutModal');
+            }
+            catch(error){
+                console.log('ERROR: ' + error);
+            }
+
+            try{
+                var self = this;
+                self.$router.push('DonationCheckoutModal');
+            }
+            catch(error){
+                console.log('error: ' + error);
+            }
+            
+        }
     }
 }
 </script>
