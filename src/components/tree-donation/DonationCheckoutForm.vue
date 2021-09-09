@@ -111,6 +111,9 @@ export default {
             this.cardCVCElement.on("change", this.setValidationError);
             
         },
+        setValidationError(event){
+            this.stripeValidationError = event.error ? event.error.message : "";
+        },
         getToken()
         {
             console.log("GET TOKEN CALLED");
