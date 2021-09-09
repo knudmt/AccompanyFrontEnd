@@ -152,8 +152,9 @@ export default {
             })
             .then(function(response){
                 if(response.status === 200){
-                    
-                    this.$router.push({path: 'DonationCheckoutModal'});
+                    console.log('this.$router: ' + this.$router);
+                    console.log('$router: ' + $router);
+                    this.$router.push('DonationCheckoutModal');
                 }
             })
             .catch(function(err){
