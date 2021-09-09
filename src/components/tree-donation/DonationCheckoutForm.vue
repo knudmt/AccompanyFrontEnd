@@ -152,7 +152,7 @@ export default {
             })
             .then(function(response){
                 if(response.status === 200){
-                    pushIt();
+                    this.pushIt();
                 }
             })
             .catch(function(err){
@@ -175,14 +175,6 @@ export default {
                 console.log('ERROR: ' + error);
             }
             
-            try{
-                console.log('trying $router');
-                $router.push('DonationCheckoutModal');
-            }
-            catch(error){
-                console.log('ERROR: ' + error);
-            }
-
             try{
                 var self = this;
                 self.$router.push('DonationCheckoutModal');
