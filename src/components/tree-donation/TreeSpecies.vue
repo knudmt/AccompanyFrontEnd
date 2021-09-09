@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="italic px-12 mt-4 md:text-lg">
-                    <span class="font-bold text-seafoam">5 mature trees</span> need to be planted to cover the CO2 waste emission for a flight from ATL to LAX. 
+                    <span class="font-bold text-seafoam">12 mature trees</span> need to be planted to cover the CO2 waste emission for a flight from ATL to LAX. 
                 </div>
                 
                 
