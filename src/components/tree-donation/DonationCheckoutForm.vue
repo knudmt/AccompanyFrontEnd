@@ -140,6 +140,7 @@ export default {
 
             var totalCents = parseFloat(this.amount) * 100;
             var json = { token : token, amount: totalCents };
+            var self = this;
 
             fetch('https://accompanypayments.azurewebsites.net/api/payment', {
                 method: 'POST',
@@ -154,6 +155,7 @@ export default {
                 if(response.status === 200){
                     console.log('this.$router: ' + this.$router);
                     console.log('$router: ' + $router);
+                    console.log('$self: ' + self.$router);
                     this.$router.push('DonationCheckoutModal');
                 }
             })
