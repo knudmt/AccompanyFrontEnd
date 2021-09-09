@@ -2,7 +2,7 @@
     <div class="w-5/6 m-auto py-20">
         <h4 class="text-2xl font-bold text-left mb-6">Passenger Information</h4>
         <div>
-            <form class="lg:flex flex-wrap m-auto">
+            <form class="lg:flex flex-wrap m-auto" onsubmit="event.preventDefault();">
                 <div class="flex flex-wrap">
                     <div class="mb-8 lg:mb-4 text-left text-lg lg:text-xl lg:w-1/2 w-full lg:pr-12">
                         <label for="FirstName">First Name</label>
@@ -134,6 +134,7 @@ export default {
                 this.amount = this.amount.replace(/\$/g, '');
                 console.log("AFTER PARSING: " + this.amount);
             }
+
             var totalCents = parseFloat(this.amount) * 100;
             var json = { token : token, amount: totalCents };
 
