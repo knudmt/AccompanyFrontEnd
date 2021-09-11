@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="overlay bg-overlayGray px-10 md:px-28 pt-20 lg:py-36 pb-16">
+        <div class="overlay bg-overlayGray h-40v md:h-50v justify-center items-center flex">
             <div class="lg:w-5/6 w-full m-auto">
                 <h2 class="lg:text-4xl md:text-2xl text-lg md:p-12 md:pb-16 text-white font-bold">Looks Like You're Closest To</h2>
                 <div class="text-white text-2xl font-bold underline">{{nearbyAirport}}</div>

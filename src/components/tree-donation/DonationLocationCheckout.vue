@@ -12,37 +12,37 @@
                     <div class="flex justify-between mb-4">
                         <span class="w-1/3 text-left">1</span>
                         <span class="w-1/3 text-center">03</span>
-                        <span class="w-1/3 text-right">$15.0</span> 
+                        <span class="w-1/3 text-right">$15</span> 
                     </div>
                     <div class="flex justify-between mb-4">
                         <span class="w-1/3 text-left">2</span>
                         <span class="w-1/3 text-center">06</span>
-                        <span class="w-1/3 text-right">$30.0</span> 
+                        <span class="w-1/3 text-right">$30</span> 
                     </div>
                     <div class="flex justify-between mb-4">
                         <span class="w-1/3 text-left">3</span>
                         <span class="w-1/3 text-center">09</span>
-                        <span class="w-1/3 text-right">$45.0</span> 
+                        <span class="w-1/3 text-right">$45</span> 
                     </div>
                     <div class="flex justify-between mb-4">
                         <span class="w-1/3 text-left">4</span>
                         <span class="w-1/3 text-center">12</span>
-                        <span class="w-1/3 text-right">$60.0</span> 
+                        <span class="w-1/3 text-right">$60</span> 
                     </div>
                     <div class="flex justify-between mb-4">
                         <span class="w-1/3 text-left">5</span>
                         <span class="w-1/3 text-center">15</span>
-                        <span class="w-1/3 text-right">$75.0</span> 
+                        <span class="w-1/3 text-right">$75</span> 
                     </div>
                     <div class="flex justify-between mb-4">
                         <span class="w-1/3 text-left lg:whitespace-nowrap">Full Capacity - Heavy</span>
                         <span class="w-1/3 text-center">1000</span>
-                        <span class="w-1/3 text-right">$5000.0</span> 
+                        <span class="w-1/3 text-right">$5000</span> 
                     </div>
                     <div class="flex justify-between">
                         <span class="w-1/3 text-left lg:whitespace-nowrap">Full Capacity - Regional</span>
                         <span class="w-1/3 text-center">300</span>
-                        <span class="w-1/3 text-right">$1500.0</span> 
+                        <span class="w-1/3 text-right">$1500</span> 
                     </div>
                 </div>
             </div>
