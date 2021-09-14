@@ -110,6 +110,15 @@ const routes = [
       import("../views/DonationCheckoutModal.vue"),
   },
   {
+    path: "/ThankyouDataModal",
+    name: "ThankyouDataModal",
+    // route level code-splitting MTK
+    // this generates a speparte chunk for this route,
+    // lazy loaded
+    component: () =>
+      import("../views/ThankyouDataModal.vue"),
+  },
+  {
     path: "/GatherFlightData",
     name: "GatherFlightData",
     // route level code-splitting

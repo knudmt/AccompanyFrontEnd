@@ -152,7 +152,7 @@ export default {
             })
             .then(response => {
                 if(response.status === 200){
-                    this.$router.push('DonationCheckoutModal')
+                    this.$router.push('DonationCheckoutModal');
                 }
             })
             .catch(function(err){
