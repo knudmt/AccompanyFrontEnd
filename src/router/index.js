@@ -119,6 +119,12 @@ const routes = [
       import("../views/ThankyouDataModal.vue"),
   },
   {
+    path: "/ThankyouOrderModal",
+    name: "ThankyouOrderModal",
+    component: () =>
+      import("../views/ThankyouOrderModal.vue"),
+  },
+  {
     path: "/GatherFlightData",
     name: "GatherFlightData",
     // route level code-splitting
