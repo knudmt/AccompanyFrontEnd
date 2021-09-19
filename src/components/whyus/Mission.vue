@@ -12,20 +12,17 @@
                   airports throughout the world.
                 </p>
                 <button class="bg-seafoam my-5 border-none text-white lg:text-base lg:px-5 font-bold lg:absolute left-0" @click="careers">Get Paid to Deliver!</button>
-                <!--<Button @click.native="$router.push('Careers'); scrollToApply();" msg="Get Paid to Deliver!" class="bg-seafoam my-5 border-none text-white lg:text-base lg:px-5 font-bold lg:absolute left-0" />-->
+                
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Button from '../Button';
 
 export default {
   name: 'Mission',
-  components: {
-    Button,
-  },
+  
   methods: {
       scrollToApply() {
           window.scrollTo(0,1500);
