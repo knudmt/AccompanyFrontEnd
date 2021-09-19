@@ -165,35 +165,29 @@ export default {
         */
         buildOrder()
         {
-            if(this.firstName == "" || this.lastName == "" || this.email == "" || this.phone == "" || this.terminal == "" || this.gate == "")
+            
+        var items = [];
+            for(var i = 0; i < this.cartObj.length; i++)
             {
-                alert("You may have left some required fields empty.");
-                throw "Form items not completed";
-            }
-            else
-            {
-                var items = [];
-                for(var i = 0; i < this.cartObj.length; i++)
+                var obj = 
                 {
-                    var obj = 
-                    {
-                        description : this.cartObj[i].title,
-                        price: parseFloat(this.cartObj[i].price),
-                        quantity : 1
-                    };
-                    items.push(obj);
+                    description : this.cartObj[i].title,
+                    price: parseFloat(this.cartObj[i].price),
+                    quantity : 1
+                };
+                items.push(obj);
             }
-                var user = this.firstName + " " + this.lastName;
-                var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
-                var vendorId = window.localStorage.getItem('vendorId');
-                var total = this.totalPrice + parseFloat(this.tip);
+            var user = this.firstName + " " + this.lastName;
+            var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
+            var vendorId = window.localStorage.getItem('vendorId');
+            var total = this.totalPrice + parseFloat(this.tip);
 
-                return new AppDelivery(appUsr,
-                                   items, 
-                                   "delivery",
-                                   this.getVendorName(vendorId),
-                                   total); // total price + tip
-            }
+            return new AppDelivery(appUsr,
+                                items, 
+                                "delivery",
+                                this.getVendorName(vendorId),
+                                total); // total price + tip
+            
         },
         
         /*
@@ -217,22 +211,11 @@ export default {
             })
             .then(response => {
                 
-                console.log("RESPONSE[2]: " + response[2]);
-                if(response[2] === "True"){
+                if(response.status === 200){
                     var appDev = this.buildOrder();
                     this.sendOrder(appDev);
                 }
             })
-            /*
-            .then(function(response){
-                console.log('RESPONSE FROM API: ' + response);
-                if(response.status === 200)
-                {
-                    var appDev = buildOrder();  // payment is successful, therefore build order and submit
-                    sendOrder(appDev);
-                }
-            })
-            */
             .catch(function(err){
                 console.log('ERROR: ' + err);
             });
@@ -247,8 +230,6 @@ export default {
             {
                 var swift = new SwiftOrder(appDelivery);
                 var submitted = swift.submitOrder();
-                // go to success page!
-                alert("Order Submitted! You can close this page");
                 this.$router.push('ThankyouOrderModal');
             }
             catch(error)
