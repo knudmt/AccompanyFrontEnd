@@ -35,19 +35,9 @@
                 
                 
                 
-                <div class="check-box w-full lg:pt-4 flex flex-col">
-                    <!--<p class="lg:text-left text-center text-lg font-bold mb-6 w-full">Check all that apply to you:</p>
-                    <div class="flex flex-wrap font-bold whitespace-nowrap lg:pl-16">
-
-                    
-                    <div class="text-left w-1/3">
-                        <input type="checkbox" id="CheckedBags" name="CheckedBags" class="scale-150">
-                        <label for="CheckedBags">Checked Bag(s)?</label><br><br>
-                    </div>
-                    
-                    </div> -->
-                    <button class="px-4 font-semibold py-2 my-4 lg:px-12 lg:mt-12 lg:py-3 m-auto block rounded bg-seafoam lg:text-2xl text-white" @click="sendData">Submit Data</button>
-                </div>
+              
+                <button class="px-4 font-semibold py-2 my-4 lg:px-12 lg:mt-12 lg:py-3 m-auto block rounded bg-seafoam lg:text-2xl text-white" @click="sendData">Submit Data</button>
+                
             </form>
         </div>
     </div>
@@ -59,17 +49,7 @@
 export default {
  
 
-    data(){
-        return {
-            heightFt: "",
-            email: "",
-            heightIn: "",
-            airline: "",
-            weight: 0,
-            seatNum: "",
-            flightNum: "",
-        }
-    }, 
+    
     methods:{
         sendData(){
             console.log("send data called..");
