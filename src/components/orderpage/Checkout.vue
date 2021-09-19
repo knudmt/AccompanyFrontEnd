@@ -215,14 +215,24 @@ export default {
                 },
                 body: JSON.stringify(json)
             })
+            .then(response => {
+                
+                console.log("RESPONSE[2]: " + response[2]);
+                if(response[2] === "True"){
+                    var appDev = this.buildOrder();
+                    this.sendOrder(appDev);
+                }
+            })
+            /*
             .then(function(response){
                 console.log('RESPONSE FROM API: ' + response);
                 if(response.status === 200)
                 {
-                    var appDev = this.buildOrder();  // payment is successful, therefore build order and submit
-                    this.sendOrder(appDev);
+                    var appDev = buildOrder();  // payment is successful, therefore build order and submit
+                    sendOrder(appDev);
                 }
             })
+            */
             .catch(function(err){
                 console.log('ERROR: ' + err);
             });
