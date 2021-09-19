@@ -3,7 +3,7 @@
     <div>
         <div class="apply-wrapper bg-bgBlue lg:p-32 lg:pt-12">
         <div class="form-wrapper  lg:bg-white rounded-2xl bg-bgBlue py-6 px-8 lg:py-12 lg:px-32 lg:shadow-lg max-w-screen-2xl m-auto">
-            <form class="lg:flex flex-wrap m-auto">
+            <form class="lg:flex flex-wrap m-auto" onsubmit="event.preventDefault();">
                 <h4 class="text-darkBlueText text-center text-xl font-bold mb-12 w-full">Contact and Delivery Information</h4>
                 <div class="mb-8 lg:mb-4 text-left text-lg lg:text-xl lg:w-1/2 lg:pr-12">
                     <label for="FirstName">First Name</label>
