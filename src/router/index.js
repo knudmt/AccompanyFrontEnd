@@ -110,6 +110,12 @@ const routes = [
       import("../views/DonationCheckoutModal.vue"),
   },
   {
+    path: "/ThankyouApplyModal",
+    name: "ThankyouApplyModal",
+    component: () =>
+      import("../views/ThankyouApplyModal.vue"),
+  },
+  {
     path: "/ThankyouDataModal",
     name: "ThankyouDataModal",
     // route level code-splitting MTK

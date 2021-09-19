@@ -90,8 +90,9 @@ export default {
 
         submitApp(){
             var applicant = this.getApplicant();
-            
-            fetch('https://accompanyapplicantapi.azurewebsites.net/api/applicant', {
+            // https://localhost:44365/api/applicant
+            // https://accompanyapplicantapi.azurewebsites.net/api/applicant
+            fetch('https://localhost:44365/api/applicant', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
