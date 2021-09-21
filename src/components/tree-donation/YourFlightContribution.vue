@@ -1,6 +1,6 @@
 <template>
     <div class="w-5/6 m-auto py-6">
-        <h4 class="text-darkBlueText text-xl font-bold mb-8">Your Flight CP2 to Tree Contribution</h4>
+        <h4 class="text-darkBlueText text-xl font-bold mb-8">Your Flight C02 to Tree Contribution</h4>
         <a href="https://applications.icao.int/icec" class="border-2 border-solid border-darkBlueText px-10 py-1 font-bold text-darkBlueText">Calculate My Flight CO2 Emission</a>
         <div class="justify-between items-center w-5/6 mt-24 hidden md:flex m-auto">
             
