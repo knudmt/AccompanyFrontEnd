@@ -91,6 +91,8 @@ export default {
         getLocation: function(){
             console.log("Getting Location...");
             console.log("Location Name: " + this.locationName);
+            window.localStorage.setItem("Airport", this.locationName);
+
             if(this.locationName.includes('Atlanta')){
                 return 'Atlanta';
             }

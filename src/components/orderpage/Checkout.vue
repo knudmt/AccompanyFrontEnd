@@ -67,7 +67,7 @@
                         <label>CVC</label>
                         <div id="card-cvc-element"></div>
                     </div>
-
+                    <!-- change back to getToken -->
                     <div class="col s12 place-order-button-block">
                         <button class="btn col s12 #e91e63 pink" @click="getToken">Place Order</button>
                     </div>
@@ -180,12 +180,14 @@ export default {
             var user = this.firstName + " " + this.lastName;
             var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
             var vendorId = window.localStorage.getItem('vendorId');
+            var airport = window.localStorage.getItem('Airport');
             var total = this.totalPrice + parseFloat(this.tip);
 
             return new AppDelivery(appUsr,
                                 items, 
                                 "delivery",
                                 this.getVendorName(vendorId),
+                                airport,
                                 total); // total price + tip
             
         },
@@ -199,7 +201,7 @@ export default {
             var json = { token : token, amount: totalCents };
 
             console.log('ATTEMPTING CHARGE....');
-
+            
             fetch('https://accompanypayments.azurewebsites.net/api/payment', {
                 method: 'POST',
                 headers: {
@@ -219,16 +221,19 @@ export default {
             .catch(function(err){
                 console.log('ERROR: ' + err);
             });
+            
         },
 
         /*
             Send order to our API
         */
-        sendOrder(appDelivery)
+        sendOrder(appDelivery) 
         {
             try
             {
-                var swift = new SwiftOrder(appDelivery);
+                
+                
+                var swift = new SwiftOrder(appDelivery); 
                 var submitted = swift.submitOrder();
                 this.$router.push('ThankyouOrderModal');
             }

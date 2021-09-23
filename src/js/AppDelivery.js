@@ -1,6 +1,6 @@
 export default class AppDelivery
 {
-    constructor(User, Items, instructions, concessionName, total)
+    constructor(User, Items, instructions, concessionName, airport, total)
     {
         if(User == null || Items == null)
         {
@@ -11,6 +11,7 @@ export default class AppDelivery
         this.items = Items;
         this.instructions = instructions;
         this.concessionName = concessionName;
+        this.airport = airport;
         this.total = total;
     }
 }
