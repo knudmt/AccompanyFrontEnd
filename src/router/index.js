@@ -110,6 +110,27 @@ const routes = [
       import("../views/DonationCheckoutModal.vue"),
   },
   {
+    path: "/ThankyouApplyModal",
+    name: "ThankyouApplyModal",
+    component: () =>
+      import("../views/ThankyouApplyModal.vue"),
+  },
+  {
+    path: "/ThankyouDataModal",
+    name: "ThankyouDataModal",
+    // route level code-splitting MTK
+    // this generates a speparte chunk for this route,
+    // lazy loaded
+    component: () =>
+      import("../views/ThankyouDataModal.vue"),
+  },
+  {
+    path: "/ThankyouOrderModal",
+    name: "ThankyouOrderModal",
+    component: () =>
+      import("../views/ThankyouOrderModal.vue"),
+  },
+  {
     path: "/GatherFlightData",
     name: "GatherFlightData",
     // route level code-splitting
