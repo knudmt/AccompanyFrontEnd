@@ -16,7 +16,7 @@ export default {
   },  
   props: {
     product: Object,
-    totalPrice: Number 
+    totalPrice: String 
   },
   methods: {
     increment () {

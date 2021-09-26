@@ -6,12 +6,14 @@
             <PassengerHero v-if="locationGrab === false"/>
             <PassLocationSelectedHero v-if="locationGrab === true" />
           </div>
+          <h2 class="lg:text-4xl text-xl font-bold text lg:mb-6 mt-8 md:mt-16">Accompany Passenger Services</h2>
         </Tab>
         <Tab :isSelected="selected === 'I’m a Flight Crew Member'" >
           <div :class="{ crewHero: this.selected }">
             <CrewHero v-if="locationGrab === false" />
             <CrewLocationSelectedHero v-if="locationGrab === true" />
           </div>
+          <h2 class="lg:text-4xl text-xl font-bold text lg:mb-6 mt-8 md:mt-16">Accompany Flight Crew Services</h2>
         </Tab>
       </HeroTabs> 
     </div>
@@ -50,6 +52,7 @@ export default {
   methods: {
     setSelected(tab) {
       this.selected = tab;
+      this.$emit('selected', tab);
     }
   }
 }
