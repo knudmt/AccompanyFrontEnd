@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Hero />
+        <Hero :locationName="locationName" />
         <div class="mb-16 max-w-screen-2xl min-h-800px m-auto">
             <div class="lg:px-20 w-full flex">
                 <a href="/OrderResturantPicker" class="text-left mt-6 mb-12 pl-6 lg:pl-0 text-sm lg:text-base bg-arrowRight font-bold text-darkBlueText bg-no-repeat bg-right bg-5px lg:bg-8px pr-4 lg:pr-6">Choose Restaurant</a>
@@ -27,6 +27,7 @@ export default {
     },
     props: {
         vendors: Array,
+        locationName: String,
     },
     emits: ['view-menu'],
 }

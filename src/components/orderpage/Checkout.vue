@@ -72,7 +72,6 @@
                         <button class="btn col s12 #e91e63 pink" @click="getToken">Place Order</button>
                     </div>
                 </section>
-               
             </form>
         </div>
     </div>
@@ -81,6 +80,7 @@
 
 
 <script>
+
 /* eslint-disable */
 import ProductList from "./ProductList";
 import User from "../../js/appUser";
@@ -114,7 +114,6 @@ export default {
             tip:'',
             amount:0,
         }
-        
     },
     mounted(){
         this.stripe = new Stripe("pk_live_ZdmJdFuypvWwlbKrAbqW0XcQ005uK2dFUU");

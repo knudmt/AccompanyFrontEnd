@@ -21,7 +21,7 @@
                 </div>
                 <CartList :cart="cart" v-if="viewCart" @show-checkout="showCheckoutScreen()" :totalPrice="totalPrice" :product="product"/>
                 <CartWidget :cart="cart" v-if="!viewCart && showCartWidget" :itemCount="itemCount" @view-cart="viewCart = !viewCart" :totalPrice="totalPrice"/>
-                <Checkout :cartObj="cartObj" :product="product" :totalPrice="totalPrice" v-if="showCheckout" />
+                <Checkout :cart="cartObj" :product="product" :totalPrice="totalPrice" v-if="showCheckout" />
             </div>
         </div>
     </div>

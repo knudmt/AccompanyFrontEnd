@@ -1,6 +1,6 @@
 <template>
     <div class="container max-w-full">
-        <VendorList @view-menu="fetchMenu" v-if="show" :vendors="vendors" />
+        <VendorList @view-menu="fetchMenu" v-if="show" :locationName="locationName" :vendors="vendors" />
         <div v-else>
             
             <ProductList :locationName="locationName" :selectedVendor="selectedVendor" :menu="menu"/>

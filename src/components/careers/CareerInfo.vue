@@ -13,8 +13,7 @@
             
             <p class="text-13px lg:text-left lg:text-base mb-6">
                 Deliver things people love, from different airport 
-                concessions. Accompany delivery is a 
-                membership-based airport meal delivery 
+                concessions. Accompany delivery is an airport meal delivery 
                 marketplace, enabling delivery of fresh meals 
                 to pilots and attendants
             </p>
