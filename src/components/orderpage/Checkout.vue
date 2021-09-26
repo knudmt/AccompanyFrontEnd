@@ -269,6 +269,8 @@ export default {
                     return "Qdoba Mexican";
                 case "10":
                     return "Wendy's";
+                case "12":
+                    return "Auntie Annes"
             }
         },
     }

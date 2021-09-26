@@ -46,11 +46,13 @@ export default {
             var objArr = {      // object mapping (base object)
                 vendors: []
             };
+            
+            
 
-            for(i = 0; i < concessions.concessions.length; i++){                // iterate
+            for(i = 0; i < concessions.conessions.length; i++){                // iterate
                 // build object on the fly; assumptions made... MK
                 // future changes to the back end services will be required.
-                var name = concessions.concessions[i];
+                var name = concessions.conessions[i];
                 var json = {};
                 var id = this.getID(name);                  // get the correpsonding ID (barf, hard-coded for now. will need to return object with ID on server)
                 json["id"] = id;
@@ -85,6 +87,8 @@ export default {
                     return "9";
                 case "Wendy's":
                     return "10";
+                case "Auntie Annes":
+                    return "12";
             }
         },
 
