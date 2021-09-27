@@ -85,6 +85,7 @@ module.exports = {
         'Hilton': "url('../images/Hilton-Logo@2x.png')",
         'Hyatt': "url('../images/Hyatt-Logo@2x.png')",
         'Marriott': "url('../images/Marriott-logo@2x.png')",
+        'Sheraton': "url('../images/SheratonLogo2x.png')",
         'Hartsfield': "url('../images/Hartsfield–Logo@2x.png')",
         'Armstrong': "url('../images/Armstrong-Logo@2x.png')",
         'Nashville': "url('../images/Nashville-Logo@2x.png')",

@@ -1,8 +1,9 @@
+
 <template>
     <div>
         <div class="apply-wrapper bg-bgBlue lg:p-32 lg:pt-12">
         <div class="form-wrapper  lg:bg-white rounded-2xl bg-bgBlue py-6 px-8 lg:py-12 lg:px-32 lg:shadow-lg max-w-screen-2xl m-auto">
-            <form class="lg:flex flex-wrap m-auto">
+            <form class="lg:flex flex-wrap m-auto" onsubmit="event.preventDefault();">
                 <h4 class="text-darkBlueText text-center text-xl font-bold mb-12 w-full">Contact and Delivery Information</h4>
                 <div class="mb-8 lg:mb-4 text-left text-lg lg:text-xl lg:w-1/2 lg:pr-12">
                     <label for="FirstName">First Name</label>
@@ -44,7 +45,6 @@
                     </div>
                 </div>
                 <!-- stripe div -->
-                
                 <section class="row payment-form">
                     <h5 class="#e0e0e0 grey lighten-4">
                         Payment Method
@@ -67,13 +67,11 @@
                         <label>CVC</label>
                         <div id="card-cvc-element"></div>
                     </div>
-
+                    <!-- change back to getToken -->
                     <div class="col s12 place-order-button-block">
-                        <button class="btn col s12 #e91e63 pink" @click="placeOrderButtonPressed">Place Order</button>
+                        <button class="btn col s12 #e91e63 pink" @click="getToken">Place Order</button>
                     </div>
                 </section>
-               
-            
             </form>
         </div>
     </div>
@@ -82,8 +80,9 @@
 
 
 <script>
+
+/* eslint-disable */
 import ProductList from "./ProductList";
-import AppItems from "../../js/appItems";
 import User from "../../js/appUser";
 import AppDelivery from "../../js/AppDelivery";
 import SwiftOrder from "../../js/switfOrder";
@@ -94,7 +93,7 @@ export default {
         ProductList,
     },
     props: {
-        cart: Array,
+        cartObj: Array,
         totalPrice: Number,
     },
     data(){
@@ -115,24 +114,23 @@ export default {
             tip:'',
             amount:0,
         }
-        
     },
     mounted(){
         this.stripe = new Stripe("pk_live_ZdmJdFuypvWwlbKrAbqW0XcQ005uK2dFUU");
         this.init();
     },
-    methods: 
-    {
-        init(){
-            // invoke and mount
+    methods: {
+        /*
+            Initialize the stripe elements
+        */
+        init()
+        {
             var elements = this.stripe.elements();
 
             this.cardNumberElement = elements.create("cardNumber");
             this.cardNumberElement.mount("#card-number-element");
-
             this.cardExpiryElement = elements.create("cardExpiry");
             this.cardExpiryElement.mount("#card-expiry-element");
-
             this.cardCVCElement = elements.create("cardCvc");
             this.cardCVCElement.mount("#card-cvc-element");
             
@@ -140,10 +138,112 @@ export default {
             this.cardNumberElement.on("change", this.setValidationError);
             this.cardExpiryElement.on("change", this.setValidationError);
             this.cardCVCElement.on("change", this.setValidationError);
+            
+        },
+        /*
+            Retrieve token from Stripe
+        */
+        getToken()
+        {
+            console.log("GET TOKEN CALLED");
+            
+            this.stripe.createToken(this.cardNumberElement).then(result => {
+                if(result.error){
+                    console.log('ERROR: ' + result.error);
+                }
+                else
+                {
+                    console.log('TOKEN RECEIVED: ' + result.token.id);
+                    this.processPayment(result.token.id);
+                }
+            });
+            
+        },
+        /*
+            Build the order for processings
+        */
+        buildOrder()
+        {
+            
+        var items = [];
+            for(var i = 0; i < this.cartObj.length; i++)
+            {
+                var obj = 
+                {
+                    description : this.cartObj[i].title,
+                    price: parseFloat(this.cartObj[i].price),
+                    quantity : 1
+                };
+                items.push(obj);
+            }
+            var user = this.firstName + " " + this.lastName;
+            var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
+            var vendorId = window.localStorage.getItem('vendorId');
+            var airport = window.localStorage.getItem('Airport');
+            var total = this.totalPrice + parseFloat(this.tip);
+
+            return new AppDelivery(appUsr,
+                                items, 
+                                "delivery",
+                                this.getVendorName(vendorId),
+                                airport,
+                                total); // total price + tip
+            
+        },
+        
+        /*
+            Begin processing the token
+        */
+        processPayment(token)
+        {
+            var totalCents = (this.totalPrice + parseFloat(this.tip)) * 100;
+            var json = { token : token, amount: totalCents };
+
+            console.log('ATTEMPTING CHARGE....');
+            
+            fetch('https://accompanypayments.azurewebsites.net/api/payment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept':'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify(json)
+            })
+            .then(response => {
+                
+                if(response.status === 200){
+                    var appDev = this.buildOrder();
+                    this.sendOrder(appDev);
+                }
+            })
+            .catch(function(err){
+                console.log('ERROR: ' + err);
+            });
+            
         },
 
-        setValidationError(event)
+        /*
+            Send order to our API
+        */
+        sendOrder(appDelivery) 
         {
+            try
+            {
+                
+                
+                var swift = new SwiftOrder(appDelivery); 
+                var submitted = swift.submitOrder();
+                this.$router.push('ThankyouOrderModal');
+            }
+            catch(error)
+            {
+                console.log("ERROR: " + error.message);
+                alert("Error processing order. Please report to administrator: " + error.message);
+            }
+        },
+
+        setValidationError(event){
             this.stripeValidationError = event.error ? event.error.message : "";
         },
 
@@ -152,39 +252,7 @@ export default {
             let val = (value/1).toFixed(2)
             return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
         },
-
-        async processToken(data){
-            const response = await fetch('https://accompanypayments.azurewebsites.net/api/payment', {
-                method: 'POST',
-                headers: {
-                    'Accept':'application/json',
-                    'Access-Control-Allow-Origin':'*'
-                },
-                body: JSON.stringify(data)
-            });
-            const content = await response;
-            console.log(content);
-
-            if(content[2] === "True")
-            {
-                console.log(this.totalPrice * 100);
-                var appDelivery = this.buildOrder();
-                this.sendOrder(appDelivery);
-            }
-        },
-        sendOrder(appDelivery)
-        {
-            try
-            {
-                var swift = new SwiftOrder(appDelivery);
-                var submitted = swift.submitOrder();
-            }
-            catch(error)
-            {
-                console.log("[ERROR]: " + error.message);
-                alert(error);
-            }
-        },
+        
         getVendorName(id){
             switch(id)
             {
@@ -200,48 +268,10 @@ export default {
                     return "Qdoba Mexican";
                 case "10":
                     return "Wendy's";
+                case "12":
+                    return "Auntie Annes"
             }
         },
-        buildOrder()
-        {
-            var items = [];
-            for(var i = 0; i < this.cart.length; i++)
-            {
-                var obj = 
-                {
-                    description : this.cart[i].title,
-                    price : parseFloat(this.cart[i].price),
-                    quanity : 1
-                };
-                items.push(obj);
-            }
-            var user = this.firstName + " " + this.lastName;
-            var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
-            var vendorId = window.localStorage.getItem('vendorId');
-            
-            return new AppDelivery(appUsr, 
-                                   items, 
-                                   "delivery", 
-                                   this.getVendorName(vendorId), 
-                                   this.totalPrice * 100);
-
-        },
-        placeOrderButtonPressed()
-        {
-            
-            this.stripe.createToken(this.cardNumberElement).then(result => {
-                if(result.error){
-                    this.stripeValidationError = result.error.message;
-                } 
-                else {
-                    var json = {
-                        amount: this.amount,
-                        source: result.token.id
-                    }
-                    this.processToken(json);
-                }
-            });
-        }
     }
 };
 

@@ -4,8 +4,6 @@
         <div v-else>
             
             <ProductList :locationName="locationName" :selectedVendor="selectedVendor" :menu="menu"/>
-          
-
 
         </div>
         
@@ -58,6 +56,8 @@ export default {
             var objArr = {      // object mapping (base object)
                 vendors: []
             };
+            
+            
 
             for(i = 0; i < concessions.conessions.length; i++){                // iterate
                 // build object on the fly; assumptions made... MK
@@ -99,11 +99,12 @@ export default {
                     return "10";
                 case "Auntie Annes":
                     return "12";
+
             }
-        },
+        },        
 
         async fetchVendors(){
-             const locale = this.getLocation();
+            const locale = this.getLocation();
             console.log("Fetching vendors with locale of: " + locale);
 
             const res = await fetch('https://accompanyconcessions.azurewebsites.net/api/restaurants?city=' + locale);
