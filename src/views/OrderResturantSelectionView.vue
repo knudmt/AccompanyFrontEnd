@@ -35,12 +35,22 @@ export default {
     },
     methods: {
 
-        /*
-        Method iterates over parsed JSON response from API
-        and attempts to build object matching db.json file object structure.
-        ID's have been changed to strings, but we are lucky that I parse 
-        both int/string on the server side :) 
-        */
+        getLocation: function(){
+            console.log("Getting Location...");
+            console.log("Location Name: " + this.locationName);
+            window.localStorage.setItem("Airport", this.locationName);
+
+            if(this.locationName.includes('Atlanta')){
+                return 'Atlanta';
+            }
+            else if(this.locationName.includes('Orleans')){
+                return 'New Orleans';
+            }
+            else {
+                return 'Nashville';
+            }
+        },
+
         buildData: function(concessions){
             var i;
             var objArr = {      // object mapping (base object)
@@ -89,27 +99,11 @@ export default {
                     return "10";
                 case "Auntie Annes":
                     return "12";
-            }
-        },
 
-        getLocation: function(){
-            console.log("Getting Location...");
-            console.log("Location Name: " + this.locationName);
-            window.localStorage.setItem("Airport", this.locationName);
-
-            if(this.locationName.includes('Atlanta')){
-                return 'Atlanta';
             }
-            else if(this.locationName.includes('Orleans')){
-                return 'New Orleans';
-            }
-            else {
-                return 'Nashville';
-            }
-        },
+        },        
 
         async fetchVendors(){
-
             const locale = this.getLocation();
             console.log("Fetching vendors with locale of: " + locale);
 
