@@ -37,22 +37,32 @@ export default {
     },
     methods: {
 
-        /*
-        Method iterates over parsed JSON response from API
-        and attempts to build object matching db.json file object structure.
-        ID's have been changed to strings, but we are lucky that I parse 
-        both int/string on the server side :) 
-        */
+        getLocation: function(){
+            console.log("Getting Location...");
+            console.log("Location Name: " + this.locationName);
+            window.localStorage.setItem("Airport", this.locationName);
+
+            if(this.locationName.includes('Atlanta')){
+                return 'Atlanta';
+            }
+            else if(this.locationName.includes('Orleans')){
+                return 'New Orleans';
+            }
+            else {
+                return 'Nashville';
+            }
+        },
+
         buildData: function(concessions){
             var i;
             var objArr = {      // object mapping (base object)
                 vendors: []
             };
 
-            for(i = 0; i < concessions.concessions.length; i++){                // iterate
+            for(i = 0; i < concessions.conessions.length; i++){                // iterate
                 // build object on the fly; assumptions made... MK
                 // future changes to the back end services will be required.
-                var name = concessions.concessions[i];
+                var name = concessions.conessions[i];
                 var json = {};
                 var id = this.getID(name);                  // get the correpsonding ID (barf, hard-coded for now. will need to return object with ID on server)
                 json["id"] = id;
@@ -87,12 +97,16 @@ export default {
                     return "9";
                 case "Wendy's":
                     return "10";
+                case "Auntie Annes":
+                    return "12";
             }
         },
 
         async fetchVendors(){
-            // add .then() for success and failure processing. MK
-            const res = await fetch('https://accompanyconcessions.azurewebsites.net/api/restaurants?city=Tampa')
+             const locale = this.getLocation();
+            console.log("Fetching vendors with locale of: " + locale);
+
+            const res = await fetch('https://accompanyconcessions.azurewebsites.net/api/restaurants?city=' + locale);
             const data = await res.json();
             
             var concessions = JSON.parse(data);
@@ -113,6 +127,7 @@ export default {
             
             var i;
             const arr = [];
+            const regex = /[^0-9.-]+/g;
             // id, title, short, long
             for(i = 0; i < items.length; i++){
                 var json = {};
@@ -123,7 +138,7 @@ export default {
                 json["long"] = "longer description";
         
                 var currency = items[i].subItems[0].price;
-                var price = Number(currency.replace(/[^0-9\.-]+/g, ""));
+                var price = Number(currency.replace(regex, ""));
                 json["price"] = price; 
                 json["image"] = "Square2.png";
 
