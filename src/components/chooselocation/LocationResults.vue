@@ -41,10 +41,10 @@ export default {
   created() {
     this.hotelOptions = [
           {
-              id: 'Hilton',
-              image: 'bg-Hilton',
-              name: 'Hilton Hotels and Resorts',
-              address: '1234 Fake Address Ave, City, GA 12345',
+              id: 'Sheraton',
+              image: 'bg-Sheraton',
+              name: 'Sheraton Hotels and Resorts',
+              address: '777 McGavock Pike, Nashville, TN 37214',
               rating: 0,
               count: 0,
           },
@@ -52,7 +52,7 @@ export default {
               id: 'Hyatt',
               image: 'bg-Hyatt',
               name: 'Hyatt Hotels and Resorts',
-              address: '1234 Fake Address Ave, City, GA 12345',
+              address: '3300 Peachtree Rd NE, Atlanta, GA 30305',
               rating: 0,
               count: 0,
           },
@@ -60,7 +60,7 @@ export default {
               id: 'Marriott',
               image: 'bg-Marriott',
               name: 'Marriott Hotels and Resorts',
-              address: '1234 Fake Address Ave, City, GA 12345',
+              address: '555 Canal St, New Orleans, LA 70130',
               rating: 0,
               count: 0,
           },

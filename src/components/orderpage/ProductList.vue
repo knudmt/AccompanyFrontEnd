@@ -20,7 +20,7 @@
                 </div>
                 <CartList :cart="cart" v-if="viewCart" @show-checkout="showCheckoutScreen()" :totalPrice="totalPrice" :product="product"/>
                 <CartWidget :cart="cart" v-if="!viewCart && showCartWidget" :itemCount="itemCount" @view-cart="viewCart = !viewCart" :totalPrice="totalPrice"/>
-                <Checkout :cart="cart" :product="product" :totalPrice="totalPrice" v-if="showCheckout" />
+                <Checkout :cart="cartObj" :product="product" :totalPrice="totalPrice" v-if="showCheckout" />
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@ export default {
     },
     data() {
         return {
-            cart: [],
+            cartObj: [],
             showCartWidget: false,
             itemCount: 0,
             totalPrice: 0,
@@ -65,24 +65,34 @@ export default {
             hideBreadcrumb: false,
         }
     },
+    mounted()
+    {
+        this.dataTransform(this.selectedVendor);
+
+    },
     methods: {
         
         calculateTotal(item) {
             this.totalPrice += item.price
         },
         addToCart(product) {
-            if(this.cart.includes(product)){
+            if(this.cartObj.includes(product)){
                 product.quantity++
                 
                 this.itemCount++
                 this.calculateTotal(product)
             } else {
-                this.cart.push(product)
+                this.cartObj.push(product)
                 this.itemCount++
                 this.calculateTotal(product)
                 this.showCartWidget = true
             }
-        }, 
+        },
+        dataTransform(vendor)
+        {
+            console.log("debug....");
+            
+        },
         showCheckoutScreen() {
             this.showCheckout = true
             this.viewCart = false

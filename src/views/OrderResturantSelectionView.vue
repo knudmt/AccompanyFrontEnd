@@ -4,8 +4,6 @@
         <div v-else>
             
             <ProductList :locationName="locationName" :selectedVendor="selectedVendor" :menu="menu"/>
-          
-
 
         </div>
         
@@ -17,6 +15,7 @@
 
 import VendorList from '../components/orderpage/VendorList';
 import ProductList from '../components/orderpage/ProductList';
+
 
 export default {
   name: 'LocationPickerView',
@@ -37,45 +36,34 @@ export default {
     },
     methods: {
 
-        getLocation: function(){
-            console.log("Getting Location...");
-            console.log("Location Name: " + this.locationName);
-            window.localStorage.setItem("Airport", this.locationName);
-
-            if(this.locationName.includes('Atlanta')){
-                return 'Atlanta';
-            }
-            else if(this.locationName.includes('Orleans')){
-                return 'New Orleans';
-            }
-            else {
-                return 'Nashville';
-            }
-        },
-
         buildData: function(concessions){
             var i;
             var objArr = {      // object mapping (base object)
                 vendors: []
             };
+            
+            
 
             for(i = 0; i < concessions.conessions.length; i++){                // iterate
                 // build object on the fly; assumptions made... MK
                 // future changes to the back end services will be required.
                 var name = concessions.conessions[i];
+                // based on the name I can assign images to the corresponding object
                 var json = {};
                 var id = this.getID(name);                  // get the correpsonding ID (barf, hard-coded for now. will need to return object with ID on server)
                 json["id"] = id;
                 json["title"] = name;
-                json["image"] = "Rectangle2.png";
                 json["fee"] = "$5.99";
                 json["deliveryTime"] = "25-35";
+                json["image"] = this.getImagePath(name);
 
               objArr.vendors.push(json);                    // like salt & pepper said, PUSH IT
             }
 
             return objArr.vendors;
         },
+
+        
 
         /*
         cough, cough... This method will set the correct ID 
@@ -102,8 +90,25 @@ export default {
             }
         },
 
+        getLocation: function(){
+            console.log("Getting Location...");
+            console.log("Location Name: " + this.locationName);
+            window.localStorage.setItem("Airport", this.locationName);
+
+            if(this.locationName.includes('Atlanta')){
+                return 'Atlanta';
+            }
+            else if(this.locationName.includes('Orleans')){
+                return 'New Orleans';
+            }
+            else {
+                return 'Nashville';
+            }
+        },
+
         async fetchVendors(){
-             const locale = this.getLocation();
+
+            const locale = this.getLocation();
             console.log("Fetching vendors with locale of: " + locale);
 
             const res = await fetch('https://accompanyconcessions.azurewebsites.net/api/restaurants?city=' + locale);
@@ -113,9 +118,45 @@ export default {
 
             return this.buildData(concessions);
         },
+
+        setItemType(name, concessionName)
+        {
+            if(concessionName === "Starbucks")
+            {
+                return "drink";
+            }
+
+            if(name.includes("Tea") || name.includes("tea") || name.includes("lemonade") || name.includes("Lemonade") || name.includes("Water") || name.includes("water"))
+            {
+                return "drink";
+            }
+            else
+            {
+                return "food";
+            }
+        },
+
+        getImagePath(vendor)
+        {
+            console.log("VENDOR: " + vendor);
+
+            switch(vendor)
+            {
+                case "Chick-fil-a":
+                    return 'Jul19_CFASandwich_pdp.png';
+                case "Auntie Annes":
+                    return 'pretzel_original_406x186.jpg';
+                case "Starbucks":
+                    return 'starbucks_menu_image.jpeg.jpg';
+                case "Chick-fil-A":
+                    return 'Jul19_CFASandwich_pdp.png';
+                default:
+                    return 'Square2.png'
+            }
+        },
+
         async fetchMenu(vendor){
-            // assumptions were made... backend changes will be required in the near future MK
-            // add .then() for success and failure processing MK
+            
             window.localStorage.setItem("vendorId", vendor.id);
 
             const res = await fetch(`https://accompanyconcessions.azurewebsites.net/api/concessions?id=${vendor.id}`);
@@ -140,7 +181,8 @@ export default {
                 var currency = items[i].subItems[0].price;
                 var price = Number(currency.replace(regex, ""));
                 json["price"] = price; 
-                json["image"] = "Square2.png";
+                json["image"] = this.getImagePath(concessionName);
+                json["itemType"] = this.setItemType(items[i].name, concessionName);  //"drink";
 
                 arr.push(json);
             }
@@ -154,7 +196,7 @@ export default {
     },
     async created() {
         this.vendors = await this.fetchVendors()
-    },
+    },   
 }
 
 </script>

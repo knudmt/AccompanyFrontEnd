@@ -9,6 +9,7 @@
     "backend": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "@vue-stripe/vue-stripe": "^4.2.5",
     "core-js": "^3.6.5",
     "json-server": "^0.16.3",
     "vue": "^2.6.11",
@@ -34,7 +35,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
-    "root": true,
+    "root": false,
     "env": {
       "node": true
     },
@@ -46,7 +47,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "off",
+      "strict" : "off"
+    }
   },
   "browserslist": [
     "> 1%",
