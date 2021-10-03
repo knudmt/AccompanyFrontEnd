@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col flex-wrap justify-center items-center w-1/3 px-12">
-        <img :src="require(`../../assets/images/` + backgroundImg)" :alt="product.id"> 
+        <img :src="require(`../../assets/images/` + backgroundImg)" :alt="product.id" :id="product.id"> 
         
         <div class="flex items-center mt-2">
             <div v-if="product.itemType === 'food'" class="food-icon w-4 h-4 mr-2.5">
@@ -36,13 +36,18 @@ export default {
     data() {
         return {
             backgroundImg: this.product.image,
+            //itempType: this.product.itemType = "food",
         }
+    },
+    mounted()
+    {
+        
     },
     methods: {
         formatPrice(value) {
         let val = (value/1).toFixed(2)
         return val.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2,})
-        }
+        },
     }
 }
 </script>

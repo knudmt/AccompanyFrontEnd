@@ -66,6 +66,11 @@ export default {
             hideBreadcrumb: false,
         }
     },
+    mounted()
+    {
+        this.dataTransform(this.selectedVendor);
+
+    },
     methods: {
         
         calculateTotal(item) {
@@ -83,7 +88,12 @@ export default {
                 this.calculateTotal(product)
                 this.showCartWidget = true
             }
-        }, 
+        },
+        dataTransform(vendor)
+        {
+            console.log("debug....");
+            
+        },
         showCheckoutScreen() {
             this.showCheckout = true
             this.viewCart = false
