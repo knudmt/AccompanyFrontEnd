@@ -11,7 +11,7 @@ export default class SwiftOrder
     async submitOrder(){
         
         console.log("[DEBUG]: attempting fetch...");
-      
+        
         var response = await fetch('https://accompanyweborder.azurewebsites.net/api/Delivery', {
             method: 'POST', 
             headers:{

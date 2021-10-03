@@ -11,23 +11,25 @@
                   Accompany aviation focus technology services has growth plans to expand in major 
                   airports throughout the world.
                 </p>
-                <Button @click.native="$router.push('Careers'); scrollToApply();" msg="Get Paid to Deliver!" class="bg-seafoam my-5 border-none text-white lg:text-base lg:px-5 font-bold lg:absolute left-0" />
+                <button class="bg-seafoam my-5 border-none text-white lg:text-base lg:px-5 font-bold lg:absolute left-0" @click="careers">Get Paid to Deliver!</button>
+                
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Button from '../Button';
 
 export default {
   name: 'Mission',
-  components: {
-    Button,
-  },
+  
   methods: {
       scrollToApply() {
           window.scrollTo(0,1500);
+      },
+
+      careers(){
+        this.$router.push('Careers');
       }
   }
 }
