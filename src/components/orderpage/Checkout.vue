@@ -98,7 +98,7 @@ export default {
     },
     data(){
         return {
-            cart: [],
+            cartObj: [],
             viewCart: true,
             stripe: null,
             cardNumberElement:null,
@@ -167,17 +167,17 @@ export default {
         */
         buildOrder()
         {
-            
-        var items = [];
-            for(var i = 0; i < this.cartObj.length; i++)
-            {
-                var obj = 
+            console.log("CART LEN: " + this.cartObj.length);
+            var items = [];
+                for(var i = 0; i < this.cartObj.length; i++)
                 {
-                    description : this.cartObj[i].title,
-                    price: parseFloat(this.cartObj[i].price),
-                    quantity : 1
-                };
-                items.push(obj);
+                    var obj = 
+                    {
+                        description : this.cartObj[i].title,
+                        price: parseFloat(this.cartObj[i].price),
+                        quantity : 1
+                    };
+                    items.push(obj);
             }
             var user = this.firstName + " " + this.lastName;
             var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
