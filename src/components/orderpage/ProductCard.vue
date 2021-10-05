@@ -36,7 +36,6 @@ export default {
     data() {
         return {
             backgroundImg: this.product.image,
-            //itempType: this.product.itemType = "food",
         }
     },
     mounted()
