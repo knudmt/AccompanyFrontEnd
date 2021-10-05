@@ -98,7 +98,7 @@ export default {
     },
     data(){
         return {
-            cart: [],
+            cartObj: [],
             viewCart: true,
             stripe: null,
             cardNumberElement:null,
