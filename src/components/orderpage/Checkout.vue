@@ -148,7 +148,10 @@ export default {
             console.log("GET TOKEN CALLED");
             
             this.stripe.createToken(this.cardNumberElement).then(result => {
-                if(result.error){
+                if(result.error)
+                {
+                    console.log('ERROR_TYPE: ' + result.error.type);
+                    console.log('ERROR_MGS: ' + result.error.message);
                     console.log('ERROR: ' + result.error);
                 }
                 else
@@ -180,6 +183,7 @@ export default {
             var appUsr = new User(user, this.phone, this.email, this.terminal, this.gate, this.tip);
             var vendorId = window.localStorage.getItem('vendorId');
             var airport = window.localStorage.getItem('Airport');
+            console.log("AIRPORT: " + airport);
             var total = this.totalPrice + parseFloat(this.tip);
 
             return new AppDelivery(appUsr,

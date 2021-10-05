@@ -180,7 +180,7 @@ export default {
                 var currency = items[i].subItems[0].price;
                 var price = Number(currency.replace(regex, ""));
                 json["price"] = price; 
-                json["image"] = this.getImagePath(concessionName);
+                json["image"] = "Square2.png";  //this.getImagePath(concessionName);
                 json["itemType"] = this.setItemType(items[i].name, concessionName);  //"drink";
 
                 arr.push(json);
