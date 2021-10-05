@@ -48,6 +48,7 @@ export default {
                 // build object on the fly; assumptions made... MK
                 // future changes to the back end services will be required.
                 var name = concessions.conessions[i];
+                // based on the name I can assign images to the corresponding object
                 var json = {};
                 var id = this.getID(name);                  // get the correpsonding ID (barf, hard-coded for now. will need to return object with ID on server)
                 json["id"] = id;

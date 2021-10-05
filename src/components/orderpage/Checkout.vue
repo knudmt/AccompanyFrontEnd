@@ -72,7 +72,6 @@
                         <button class="btn col s12 #e91e63 pink" @click="getToken">Place Order</button>
                     </div>
                 </section>
-               
             </form>
         </div>
     </div>
@@ -81,6 +80,7 @@
 
 
 <script>
+
 /* eslint-disable */
 import ProductList from "./ProductList";
 import User from "../../js/appUser";
@@ -93,7 +93,7 @@ export default {
         ProductList,
     },
     props: {
-        cartObj: Array,
+        cart: Array,
         totalPrice: Number,
     },
     data(){
@@ -116,6 +116,9 @@ export default {
         }
     },
     mounted(){
+        console.log("CART: " + this.cart);
+        console.log("CART_LEN: " + this.cart.length);
+
         this.stripe = new Stripe("pk_live_ZdmJdFuypvWwlbKrAbqW0XcQ005uK2dFUU");
         this.init();
     },
@@ -167,14 +170,14 @@ export default {
         */
         buildOrder()
         {
-            console.log("CART LEN: " + this.cartObj.length);
+            console.log("CART LEN: " + this.cart.length);
             var items = [];
-                for(var i = 0; i < this.cartObj.length; i++)
+                for(var i = 0; i < this.cart.length; i++)
                 {
                     var obj = 
                     {
-                        description : this.cartObj[i].title,
-                        price: parseFloat(this.cartObj[i].price),
+                        description : this.cart[i].title,
+                        price: parseFloat(this.cart[i].price),
                         quantity : 1
                     };
                     items.push(obj);
@@ -215,7 +218,7 @@ export default {
                 body: JSON.stringify(json)
             })
             .then(response => {
-                
+                console.log("STATUS: " + response.status);
                 if(response.status === 200){
                     var appDev = this.buildOrder();
                     this.sendOrder(appDev);
@@ -223,6 +226,7 @@ export default {
             })
             .catch(function(err){
                 console.log('ERROR: ' + err);
+                console.log('ERROR: ' + err.message);
             });
             
         },
