@@ -49,7 +49,7 @@
     },
     "rules": {
       "no-unused-vars": "off",
-      "strict" : "off"
+      "strict": "off"
     }
   },
   "browserslist": [
