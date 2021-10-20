@@ -1,9 +1,7 @@
 <template>
     <div class="w-5/6 m-auto py-20">
         <h4 class="text-2xl font-bold text-left mb-6">Passenger Information</h4>
-        <div id="loading" style="position:absolute; left:50%; top:50%; z-index: 1; width: 120px; height: 120px; margin: -76px 0 0 -76px;">
-            <img id="loading-image" src="../../assets/images/loading.gif" alt="Loading..." style="display:none;" />
-        </div>
+       
         <div>
             <form class="lg:flex flex-wrap m-auto" onsubmit="event.preventDefault();">
                 <div class="flex flex-wrap">
