@@ -93,7 +93,11 @@ export default {
         getLocation: function(){
             console.log("Getting Location...");
             console.log("Location Name: " + this.locationName);
-            window.localStorage.setItem("Airport", this.locationName);
+
+            if(window.localStorage.getItem('Airport') === null){
+                window.localStorage.setItem("Airport", this.locationName);
+            }
+            
 
             if(this.locationName.includes('Atlanta')){
                 return 'Atlanta';
@@ -157,7 +161,10 @@ export default {
 
         async fetchMenu(vendor){
             
-            window.localStorage.setItem("vendorId", vendor.id);
+            if(window.localStorage.getItem("vendorId") === null){
+                window.localStorage.setItem("vendorId", vendor.id);
+            }
+            
 
             const res = await fetch(`https://accompanyconcessions.azurewebsites.net/api/concessions?id=${vendor.id}`);
             const data = await res.json();

@@ -1,6 +1,9 @@
 <template>
     <div class="w-5/6 m-auto py-20">
         <h4 class="text-2xl font-bold text-left mb-6">Passenger Information</h4>
+        <div id="loading" style="position:absolute; left:50%; top:50%; z-index: 1; width: 120px; height: 120px; margin: -76px 0 0 -76px;">
+            <img id="loading-image" src="../../assets/images/loading.gif" alt="Loading..." style="display:none;" />
+        </div>
         <div>
             <form class="lg:flex flex-wrap m-auto" onsubmit="event.preventDefault();">
                 <div class="flex flex-wrap">
@@ -71,6 +74,8 @@
 <script>
 /* eslint-disable */
 
+import LogDonation from "../../js/LogDonation";
+
 export default {
     data() {
         return {
@@ -116,6 +121,7 @@ export default {
         },
         getToken()
         {
+           
             console.log("GET TOKEN CALLED");
             
             this.stripe.createToken(this.cardNumberElement).then(result => {
@@ -152,6 +158,24 @@ export default {
             })
             .then(response => {
                 if(response.status === 200){
+                    var fname = this.firstName;
+                    var lname = this.lastName;
+                    var phone = this.phone;
+                    var email = this.email;
+                    var amount = this.amount.replace(/\$/g, '');
+                    
+                    var obj = {
+                        "FirstName": fname,
+                        "LastName": lname,
+                        "Phone": phone,
+                        "Email": email,
+                        "Amount": amount
+                    };
+
+                    console.log("DONATION: " + obj);
+                    var donation = new LogDonation(obj);
+                    donation.submitData();
+
                     this.$router.push('DonationCheckoutModal');
                 }
             })
